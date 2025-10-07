@@ -3,26 +3,22 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import routes from "./routes.jsx";
 import "./style.css";
-import NavBar from "./components/NavBar.jsx";
-import Header from "./components/Header .jsx";
 
 const router = createBrowserRouter(routes);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    {/* <Header /> */}
-
     <RouterProvider router={router} />
   </StrictMode>
 );
 
 /**
- * 1- three pages (home, shop and card)
- * 2- pages should be shown all the time so the user can navigate between them
+ * 1- three pages (home, shop and card) ==> DONE !
+ * 2- pages should be shown all the time so the user can navigate between them ==> DONE!
  * 3- home page :
  *  ==> should be styled with anything!
  * 4- shop page :
- *  ==> fetch api and show the products (in card component!)
+ *  ==> fetch api and show the products
  *  ==> each product should should have :
  *                ==> input field (how many items they want!)
  *                ==> + and - buttons
@@ -36,5 +32,3 @@ createRoot(document.getElementById("root")).render(
  * 8- make sure to test the app using React Testing Library, dont use (react-router-dom!),
  * 9- style the app!
  */
-
-// react router /
