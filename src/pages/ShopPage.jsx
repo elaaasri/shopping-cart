@@ -9,16 +9,13 @@ const ShopPage = () => {
       .then(setProducts);
   }, []);
 
-  const filteredProducts = products.filter(
-    (product) =>
-      product.images[0].includes("https://i.imgur.com/") &&
-      product.images.length >= 2
-  );
-
-  // console.log(filteredProducts.)
-  // filteredProducts.forEach((product) => {
-  //   console.log(product.category.name);
-  // });
+  const filteredProducts = products.filter(({ images }) => {
+    const hasValidImgs = images?.every((img) =>
+      img?.includes("https://i.imgur.com/")
+    );
+    const hasMoreThanOneImg = images?.length >= 2;
+    return hasValidImgs && hasMoreThanOneImg;
+  });
 
   return (
     <>
@@ -36,7 +33,6 @@ const ShopPage = () => {
               <div>{product.title}</div>
               <div>{product.price}</div>
               <div>{product.description}</div>
-              {/* <div>{product.title}</div>; */}
               <img src={product.images[0]} alt="" style={{ width: "250px" }} />
             </div>
           );
