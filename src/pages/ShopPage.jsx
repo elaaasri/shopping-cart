@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+
+// import "./style.css";
+
 // import { useOutletContext } from "react-router";
 const ShopPage = () => {
   const [data, setData] = useState([]);
@@ -10,6 +13,22 @@ const ShopPage = () => {
   }, []);
 
   const { products = [] } = data ?? {};
+
+  // const categories = products.map((product) => {
+  //   return product.category;
+  // });
+
+  // const test = categories.filter((category, index, self) => {
+  //   const otherIndex = self.findIndex(
+  //     (other) => JSON.stringify(category) === JSON.stringify(other)
+  //   );
+  //   return index === otherIndex;
+  // });
+
+  // console.log("result", test);
+
+  const categories = [...new Set(products.map((product) => product.category))];
+  console.log(categories);
 
   // const { carts } = data;
   // console.log(carts);
@@ -36,8 +55,22 @@ const ShopPage = () => {
 
   return (
     <>
-      <h1>Shop Page!</h1>
-      <div className="shop-container">
+      <div className="category-container">
+        <h1>Shop Page!</h1>
+        {categories.map((category, index) => {
+          const condition = category === "beauty" && "/lotus.png";
+
+          return (
+            <div className="category-type" key={index}>
+              <h1>{category}</h1>
+              <img src={condition} alt="" />
+            </div>
+          );
+        })}
+      </div>
+      {/* [ "beauty", "fragrances", "furniture", "groceries" ] */}
+
+      {/* <div className="shop-container">
         <div>{products.length}</div>
         {products.map(({ title, price, images, description }, index) => {
           return (
@@ -54,7 +87,7 @@ const ShopPage = () => {
             </div>
           );
         })}
-      </div>
+      </div> */}
     </>
   );
 };
