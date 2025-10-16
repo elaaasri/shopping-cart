@@ -1,10 +1,9 @@
-import NavBar from "./NavBar";
-import { Link, Outlet } from "react-router";
+import { Link } from "react-router";
 
 const Header = () => {
   return (
     <header className="header">
-      <img className="logo-icon" src="/logo.png" alt="logo icon" />
+      <img className="logo-icon" src="/icons/logo.png" alt="logo icon" />
       <div className="form-container">
         <input
           className="input input-alt"

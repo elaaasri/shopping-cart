@@ -107,3 +107,11 @@
 /* .input-alt:hover + .input-border-alt {
   width: 100%;
 } */
+
+/* categories container styles */
+.categories-container {
+  border: solid 1px red;
+}
+.category-type > img {
+  width: 250px;
+}

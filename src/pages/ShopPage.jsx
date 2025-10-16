@@ -1,8 +1,4 @@
 import { useState, useEffect } from "react";
-
-// import "./style.css";
-
-// import { useOutletContext } from "react-router";
 const ShopPage = () => {
   const [data, setData] = useState([]);
 
@@ -13,62 +9,21 @@ const ShopPage = () => {
   }, []);
 
   const { products = [] } = data ?? {};
-
-  // const categories = products.map((product) => {
-  //   return product.category;
-  // });
-
-  // const test = categories.filter((category, index, self) => {
-  //   const otherIndex = self.findIndex(
-  //     (other) => JSON.stringify(category) === JSON.stringify(other)
-  //   );
-  //   return index === otherIndex;
-  // });
-
-  // console.log("result", test);
-
-  const categories = [...new Set(products.map((product) => product.category))];
-  console.log(categories);
-
-  // const { carts } = data;
-  // console.log(carts);
-  // console.log(data);
-
-  // carts?.forEach((cart) => {
-  //   console.log(cart.products);
-  // });
-
-  // products?.map((product) => {
-  // console.log(product.category);
-  // });
-
-  // const filteredProducts = getFilteredProducts(products);
-  // const categories = filteredProducts.map((product) => [
-  //   product.category.name,~
-  //   product.category.image,
-  // ]);
-  // console.log(filteredProducts, filteredProducts.length);
-
-  // const unique = getUnique(filteredProducts);
-  // console.log(unique, unique.length);
-  // unique.map((a) => console.log(a));
+  const categories = getCategories(products);
 
   return (
-    <>
-      <div className="category-container">
+    <div className="categories-container">
+      <div className="category">
         <h1>Shop Page!</h1>
-        {categories.map((category, index) => {
-          const condition = category === "beauty" && "/lotus.png";
-
+        {categories.map(({ name, img }, index) => {
           return (
             <div className="category-type" key={index}>
-              <h1>{category}</h1>
-              <img src={condition} alt="" />
+              <h1>{name}</h1>
+              <img src={img} alt={name + " image"} />
             </div>
           );
         })}
       </div>
-      {/* [ "beauty", "fragrances", "furniture", "groceries" ] */}
 
       {/* <div className="shop-container">
         <div>{products.length}</div>
@@ -88,10 +43,26 @@ const ShopPage = () => {
           );
         })}
       </div> */}
-    </>
+    </div>
   );
 };
 export default ShopPage;
+
+const getCategories = (products) => {
+  // get only unique categories :
+  const categories = [...new Set(products.map((product) => product.category))];
+  const categoryImgs = {
+    beauty: "/imgs/beauty-img.webp",
+    fragrances: "./imgs/fragrances-img.webp",
+    furniture: "./imgs/furniture-img.webp",
+    groceries: "./imgs/groceries-img.webp",
+  };
+  // add images to its right category :
+  return categories.map((category) => ({
+    name: category,
+    img: categoryImgs[category],
+  }));
+};
 
 // get unique
 // const getUnique = (arr) => {
