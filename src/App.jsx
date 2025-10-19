@@ -1,23 +1,21 @@
 import Header from "./components/Header";
 import { Outlet } from "react-router";
+import { useState, useEffect } from "react";
 
 function App() {
-  // const [data, setData] = useState([]);
-  // const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState(null);
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    fetch("https://dummyjson.com/products")
+      .then((res) => res.json())
+      .then(setData);
+  }, []);
 
-  // useEffect(() => {
-  //   fetch("https://api.escuelajs.co/api/v1/products")
-  //     .then((res) => res.json())
-  //     .then(setData);
-  // }, []);
-  // console.log(data);
-  // console.log(data.length);
+  const { products = [] } = data;
 
   return (
     <>
       <Header />
-      <Outlet />
+      <Outlet context={{ products }} />
     </>
   );
 }
