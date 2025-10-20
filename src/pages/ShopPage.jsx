@@ -7,14 +7,12 @@ const ShopPage = () => {
 
   return (
     <div className="categories-container">
-      {categories.map(({ name, img }, index) => {
+      {categories.map(({ catName, catImg }, index) => {
         return (
-          <div className={`${name}-category`} key={index}>
-            <Link to={`/shop/${name}`}>
-              <h1>{name}</h1>
-            </Link>
-            <img src={img} alt={name + " image"} />
-          </div>
+          <Link to={`/shop/${catName}`} className="category-card" key={index}>
+            <img src={catImg} alt={catName + " image"} />
+            <h2>{catName}</h2>
+          </Link>
         );
       })}
     </div>
@@ -32,9 +30,10 @@ const getCategories = (products) => {
     furniture: "./imgs/furniture-img.webp",
     groceries: "./imgs/groceries-img.webp",
   };
+
   // add imgs to its correct category :
   return categories.map((category) => ({
-    name: category,
-    img: categoryImgs[category],
+    catName: category,
+    catImg: categoryImgs[category],
   }));
 };

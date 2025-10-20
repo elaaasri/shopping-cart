@@ -1,27 +1,28 @@
-import { useParams, useOutletContext } from "react-router";
+import { useParams, useOutletContext, Link } from "react-router";
 
 // displays products for a specific category :
 const CategoryPage = () => {
   const { products } = useOutletContext();
   const { category } = useParams();
-  const categoryProducts = getCategoryProducts(products, category);
+  const filteredCategoryProducts = getCategoryByName(products, category);
 
   return (
-    <div className={`${category}-shop-container`}>
-      <h1>Total Products: {categoryProducts.length}</h1>
-      {categoryProducts.map(({ title, price, images, description, id }) => {
+    <div className="shop-products-container">
+      <h1>Total Products: {filteredCategoryProducts.length}</h1>
+      {filteredCategoryProducts.map(({ title, price, images, id }) => {
         return (
-          <div
-            className={`${category}-product`}
+          <Link
+            to={`/shop/${category}/${title}`}
+            className="product-card"
             key={id}
-            style={{ border: "red solid 1px" }}
           >
-            <div>{title}</div>
-            <div>{price}</div>
-            <div>{description}</div>
-            <h2>{images.length}</h2>
-            <img src={images[0]} alt="" style={{ width: "250px" }} />
-          </div>
+            <div key={id}>
+              <img src={images[0]} alt="" style={{ width: "250px" }} />
+              <div>{title}</div>
+              <div>{price}</div>
+              <h2>image length : {images.length}</h2>
+            </div>
+          </Link>
         );
       })}
     </div>
@@ -30,8 +31,11 @@ const CategoryPage = () => {
 export default CategoryPage;
 
 // fitlers products by category name :
-const getCategoryProducts = (products, name) => {
+const getCategoryByName = (products, name) => {
   return products.filter(({ category }) => {
     return category === name;
   });
 };
+
+// workin on orgonizing class names
+// add pageproduct component that renders product infos

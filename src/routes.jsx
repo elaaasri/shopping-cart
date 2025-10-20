@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import ShopPage from "./pages/ShopPage";
 import CartPage from "./pages/CartPage";
 import CategoryPage from "./pages/CategoryPage";
+import ProductPage from "./pages/ProductPage";
 
 const routes = [
   {
@@ -18,8 +19,12 @@ const routes = [
         element: <ShopPage />,
       },
       {
-        path: `/shop/:category`,
+        path: "/shop/:category",
         element: <CategoryPage />,
+      },
+      {
+        path: "/shop/:category/:title",
+        element: <ProductPage />,
       },
       {
         path: "/cart",
