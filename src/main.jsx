@@ -18,7 +18,7 @@ createRoot(document.getElementById("root")).render(
  * 3- home page :
  *  ==> should be styled with anything!
  * 4- shop page :
- *  ==> fetch api and show the products
+ *  ==> fetch api and show the products ==> DONE !
  *  ==> each product should should have :
  *                ==> input field (how many items they want!)
  *                ==> + and - buttons

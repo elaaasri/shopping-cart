@@ -123,13 +123,26 @@
 .category-card img {
   width: 250px;
 }
+/* product page styles */
+/*  */
+.product-container {
+  /* display: flex; */
+  border: solid 1px red;
+}
+.product img {
+  width: 250px;
+  border: 1px solid green;
+}
 
 /* category shop products container styles */
-.shop-products-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.product-card {
+.images-slider-container {
+  /* display: flex; */
+  width: 250px;
   border: red solid 1px;
+
+  /* width: 50%; */
+}
+.images-slider-container img {
+  display: flex;
+  width: 250px;
 }
