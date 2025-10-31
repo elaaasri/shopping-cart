@@ -42,7 +42,7 @@ const getProductByTitle = (products, productTitle) => {
   });
 };
 
-// display images with a slider using swiper library :
+// display product images with a slider using swiper library :
 const ImageSlider = ({ images, title }) => {
   return (
     <Swiper

@@ -2,8 +2,11 @@ import { Link, useOutletContext } from "react-router";
 
 // displays all available product categories :
 const ShopPage = () => {
-  const { products } = useOutletContext();
+  const { products, loading, error } = useOutletContext();
   const categories = getCategories(products);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>A network error was encountered</p>;
 
   return (
     <div className="categories-container">
