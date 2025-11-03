@@ -1,7 +1,9 @@
 import { useParams, useOutletContext } from "react-router";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import { useState } from "react";
+import CustomButton from "../components/CustomButton";
 import { Navigation, Pagination, Zoom, Autoplay } from "swiper/modules";
+import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/zoom";
@@ -11,6 +13,7 @@ const ProductPage = () => {
   const { products } = useOutletContext();
   const { title } = useParams();
   const filteredProduct = getProductByTitle(products, title);
+  const [productQuantity, setProductQuantity] = useState(0);
 
   return (
     <div className="product-container">
@@ -23,6 +26,11 @@ const ProductPage = () => {
             ) : (
               <ImageSlider images={images} title={title} />
             )}
+            <CustomButton
+              quantity={productQuantity}
+              setQuantity={setProductQuantity}
+            />
+            <button>Add to Cart</button>
             <div>{title}</div>
             <div>{price}</div>
             <div>{description}</div>
