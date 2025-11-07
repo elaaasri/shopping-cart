@@ -5,7 +5,6 @@ import routes from "./routes.jsx";
 import "./style.css";
 
 const router = createBrowserRouter(routes);
-
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />
@@ -21,9 +20,9 @@ createRoot(document.getElementById("root")).render(
  *  ==> fetch api and show the products   ==> DONE !
  *  ==> adding fetching loading, error ...==> DONE !
  *  ==> each product should should have :
- *                ==> input field (how many items they want!)
- *                ==> + and - buttons
- *                ==> title and add to cart button!
+ *                ==> input field (how many items they want!) ==> DONE
+ *                ==> + and - buttons ==> DONE
+ *                ==> title and add to cart button! ==> DONE
  * 5- cart page in the navbar should indicate how many items after adding removing them (real time update!)
  * 6- the cart page should display :
  *        ==> items and their quantities

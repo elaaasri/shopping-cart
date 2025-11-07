@@ -5,11 +5,12 @@ import { useState, useEffect } from "react";
 function App() {
   const { data, loading, error } = useFetch("https://dummyjson.com/products");
   const { products = [] } = data;
+  const [cartItems, setCartItems] = useState([]);
 
   return (
     <>
-      <Header />
-      <Outlet context={{ products, loading, error }} />
+      <Header cartItems={cartItems} />
+      <Outlet context={{ products, loading, error, cartItems, setCartItems }} />
     </>
   );
 }
@@ -19,6 +20,7 @@ const useFetch = (url) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
   useEffect(() => {
     fetch(url)
       .then((res) => {

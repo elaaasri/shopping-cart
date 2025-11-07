@@ -1,17 +1,18 @@
-// increase and decrease product quantity :
+// increases and decreases product quantity :
 const QuantityButton = ({ quantity, setQuantity }) => {
   const increase = () => {
     setQuantity((prev) => prev + 1);
   };
   const decrease = () => {
-    if (quantity <= 0) return;
+    if (quantity <= 1) return;
     setQuantity((prev) => prev - 1);
   };
   const handleChange = (e) => {
-    const { value } = e.target;
-    const inputValue = Number(value);
+    let { value } = e.target;
+    let inputValue = Number(value);
     setQuantity(inputValue);
   };
+
   return (
     <div>
       <input
@@ -25,4 +26,5 @@ const QuantityButton = ({ quantity, setQuantity }) => {
     </div>
   );
 };
+
 export default QuantityButton;

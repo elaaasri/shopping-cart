@@ -1,4 +1,7 @@
+import { useOutletContext } from "react-router";
 const CartPage = () => {
-  return <h1>Cart Page!</h1>;
+  const { cartItems } = useOutletContext();
+  console.log(cartItems);
+  return <h1>{cartItems.length}</h1>;
 };
 export default CartPage;

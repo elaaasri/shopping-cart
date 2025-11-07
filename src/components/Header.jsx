@@ -1,6 +1,8 @@
 import { Link } from "react-router";
 
-const Header = () => {
+const Header = ({ cartItems }) => {
+  console.log(cartItems);
+
   return (
     <header className="header">
       <img className="logo-icon" src="/icons/logo.png" alt="logo icon" />
@@ -8,7 +10,6 @@ const Header = () => {
         <input
           className="input input-alt"
           placeholder="search for ur favorite product..."
-          required
           type="text"
         />
         <span className="input-border input-border-alt"></span>
@@ -21,7 +22,7 @@ const Header = () => {
           <button>Shop</button>
         </Link>
         <Link to="/cart">
-          <button>Cart</button>
+          <button>Cart {cartItems.length}</button>
         </Link>
       </nav>
     </header>

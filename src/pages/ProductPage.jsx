@@ -1,19 +1,27 @@
+import { useState } from "react";
 import { useParams, useOutletContext } from "react-router";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useState } from "react";
-import CustomButton from "../components/CustomButton";
 import { Navigation, Pagination, Zoom, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/zoom";
 import "swiper/css/autoplay";
+import QuantityButton from "../components/QuantityButton";
 
 const ProductPage = () => {
-  const { products } = useOutletContext();
+  const { products, setCartItems } = useOutletContext();
   const { title } = useParams();
   const filteredProduct = getProductByTitle(products, title);
-  const [productQuantity, setProductQuantity] = useState(0);
+  const [productQuantity, setProductQuantity] = useState(1);
+
+  const handleAddToCart = () => {
+    if (productQuantity <= 0) return;
+    setCartItems((prev) => [
+      ...prev,
+      ...Array(productQuantity).fill(filteredProduct).flat(),
+    ]);
+  };
 
   return (
     <div className="product-container">
@@ -26,11 +34,11 @@ const ProductPage = () => {
             ) : (
               <ImageSlider images={images} title={title} />
             )}
-            <CustomButton
+            <QuantityButton
               quantity={productQuantity}
               setQuantity={setProductQuantity}
             />
-            <button>Add to Cart</button>
+            <button onClick={() => handleAddToCart()}>Add to Cart</button>
             <div>{title}</div>
             <div>{price}</div>
             <div>{description}</div>
