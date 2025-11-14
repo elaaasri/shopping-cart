@@ -37,3 +37,23 @@ const useFetch = (url) => {
   return { data, loading, error };
 };
 export default App;
+
+// working on making each product grouped !
+
+// const arr = [
+//   { name: "elasri", zbe: 1 },
+//   { name: "anas", zbe: 2 },
+//   { name: "elasri", zbe: 3 },
+// ];
+
+// const grouped = arr.reduce((acc, obj) => {
+//   const key = obj.name;
+//   if (acc[key]) {
+//     acc[key] = [...acc[key], obj];
+//   } else {
+//     acc[key] = [obj];
+//   }
+//   return acc;
+// }, {});
+
+// console.log(grouped);

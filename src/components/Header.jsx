@@ -1,8 +1,6 @@
 import { Link } from "react-router";
 
 const Header = ({ cartItems }) => {
-  console.log(cartItems);
-
   return (
     <header className="header">
       <img className="logo-icon" src="/icons/logo.png" alt="logo icon" />

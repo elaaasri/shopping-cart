@@ -3,10 +3,12 @@ const QuantityButton = ({ quantity, setQuantity }) => {
   const increase = () => {
     setQuantity((prev) => prev + 1);
   };
+
   const decrease = () => {
     if (quantity <= 1) return;
     setQuantity((prev) => prev - 1);
   };
+
   const handleChange = (e) => {
     let { value } = e.target;
     let inputValue = Number(value);
