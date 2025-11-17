@@ -2,8 +2,12 @@ import { useOutletContext } from "react-router";
 // import QuantityButton from "../components/QuantityButton";
 
 const CartPage = () => {
-  const { cartItems } = useOutletContext();
+  const { cartItems, setCartItems } = useOutletContext();
   const groupedProducts = getGroupedProducts(cartItems);
+
+  const handleRemoveButton = (productTitle) => {
+    setCartItems((prev) => prev.filter((item) => item.title !== productTitle));
+  };
 
   return (
     <div className="cart-container">
@@ -20,7 +24,9 @@ const CartPage = () => {
               <div>price: {price}</div>
               <div>quantity: {products.length}</div>
               <div>total: {totalPrice}</div>
-              <button>remove</button>
+              <button onClick={() => handleRemoveButton(productTitle)}>
+                remove
+              </button>
             </div>
           );
         }
