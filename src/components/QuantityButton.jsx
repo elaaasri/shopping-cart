@@ -23,8 +23,8 @@ const QuantityButton = ({ quantity, setQuantity }) => {
         placeholder="how many items?"
         onChange={(e) => handleChange(e)}
       />
-      <button onClick={() => increase()}>+</button>
-      <button onClick={() => decrease()}>-</button>
+      <button onClick={increase}>+</button>
+      <button onClick={decrease}>-</button>
     </div>
   );
 };

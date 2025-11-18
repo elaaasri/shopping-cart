@@ -3,6 +3,7 @@ import { Link, useOutletContext } from "react-router";
 // displays all available product categories :
 const ShopPage = () => {
   const { products, loading, error } = useOutletContext();
+
   const categories = getCategories(products);
 
   if (loading) return <p>Loading...</p>;

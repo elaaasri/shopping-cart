@@ -32,7 +32,7 @@ const ProductPage = () => {
               quantity={productQuantity}
               setQuantity={setProductQuantity}
             />
-            <button onClick={() => handleAddToCart()}>Add to Cart</button>
+            <button onClick={handleAddToCart}>Add to Cart</button>
             <div>{title}</div>
             <div>{price}</div>
             <div>{description}</div>
