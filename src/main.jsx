@@ -11,10 +11,7 @@ createRoot(document.getElementById("root")).render(
   </StrictMode>
 );
 
-// comments !
-//
-
-/**
+/*
  * 1- three pages (home, shop and card) ==> DONE !
  * 2- pages should be shown all the time so the user can navigate between them ==> DONE!
  * 3- home page :
@@ -30,8 +27,9 @@ createRoot(document.getElementById("root")).render(
  * 6- the cart page should display :
  *        ==> items and their quantities ==> done
  *        ==> allows user to increase/decrease quantity ==> done
- *        ==> allows removing!
- * 7- Clear out any missing in props validation errors in your app!
+ *        ==> allows removing! => done
+ * 7- Clear out any missing in props validation errors in your app! => done
  * 8- make sure to test the app using React Testing Library, dont use (react-router-dom!),
  * 9- style the app!
+ * 10- default for all wrong urls
  */

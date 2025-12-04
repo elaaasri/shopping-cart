@@ -36,6 +36,3 @@ const getCategoryByName = (products, name) => {
     return category === name;
   });
 };
-
-// workin on orgonizing class names
-// add pageproduct component that renders product infos

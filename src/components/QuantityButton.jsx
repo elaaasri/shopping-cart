@@ -10,8 +10,8 @@ const QuantityButton = ({ quantity, setQuantity }) => {
   };
 
   const handleChange = (e) => {
-    let { value } = e.target;
-    let inputValue = Number(value);
+    const { value } = e.target;
+    const inputValue = Number(value);
     setQuantity(inputValue);
   };
 

@@ -1,15 +1,25 @@
 import Header from "./components/Header";
 import { Outlet } from "react-router";
 import { useState, useEffect } from "react";
+import SearchBox from "./components/SearchBox";
 
 function App() {
   const { data, loading, error } = useFetch("https://dummyjson.com/products");
   const { products = [] } = data;
   const [cartItems, setCartItems] = useState([]);
+  const [showSearchBox, setShowSearchBox] = useState(false);
 
   return (
     <>
-      <Header cartItems={cartItems} />
+      <Header
+        cartItems={cartItems}
+        products={products}
+        // showSearchBox={showSearchBox}
+        setShowSearchBox={setShowSearchBox}
+      />
+      {showSearchBox && (
+        <SearchBox setShowSearchBox={setShowSearchBox} products={products} />
+      )}
       <Outlet context={{ products, loading, error, cartItems, setCartItems }} />
     </>
   );

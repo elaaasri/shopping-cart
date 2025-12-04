@@ -5,6 +5,7 @@ const ShopPage = () => {
   const { products, loading, error } = useOutletContext();
 
   const categories = getCategories(products);
+  console.log(products.length);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>A network error was encountered</p>;

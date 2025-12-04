@@ -4,6 +4,7 @@ const PaymentSection = ({ allProductsPrice }) => {
   const handleCheckoutButton = () => {
     alert("Checkout successful!");
   };
+
   return (
     <div className="payment-section-container">
       <div>total : {allProductsPrice}</div>
