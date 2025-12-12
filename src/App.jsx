@@ -11,12 +11,7 @@ function App() {
 
   return (
     <>
-      <Header
-        cartItems={cartItems}
-        products={products}
-        // showSearchBox={showSearchBox}
-        setShowSearchBox={setShowSearchBox}
-      />
+      <Header cartItems={cartItems} setShowSearchBox={setShowSearchBox} />
       {showSearchBox && (
         <SearchBox setShowSearchBox={setShowSearchBox} products={products} />
       )}

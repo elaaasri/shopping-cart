@@ -20,20 +20,136 @@
 } */
 
 /* header styles */
-.header {
+.header-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  transition: transform 0.35s ease;
+}
+.header-container.animated {
+  transform: translateY(50%);
+}
+.header-container.scrolled {
+  display: flex;
+  justify-self: center;
+  flex-direction: row-reverse;
+  justify-content: space-around;
   align-items: center;
-  font-weight: bold;
+  min-width: 30%;
+  border: solid 1px green;
+  height: 55px;
+  border-radius: 10px;
+
+  background: inherit;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: all 1s ease;
+  border: none;
+  outline: none;
+}
+.header-main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  background-color: #e7f5dc;
+}
+.scrolled .header-main {
+  background-color: inherit;
+  margin-right: -15px;
+}
+.header-logo {
+  width: 70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.scrolled .header-logo {
+  display: none;
+}
+.header-icons-wrapper {
+  position: relative;
+  display: flex;
+  gap: 15px;
+  margin: 35px;
+}
+.scrolled .header-icons-wrapper {
+  display: flex;
   gap: 10px;
-  padding: 10px 5%;
-  border: 1px solid red;
-  height: 60px;
 }
-/* logo styles */
-.logo-icon {
-  width: 50px;
+.header-icons {
+  font-size: 25px;
+  cursor: pointer;
+  transition: transform 200ms;
 }
+.scrolled .header-icons {
+  font-size: 22px;
+}
+.scrolled .header-icons > button {
+  width: 20px;
+  height: 20px;
+}
+.header-icons:hover {
+  text-shadow: none;
+  transform: translateY(-10%);
+}
+.header-icons > button {
+  position: absolute;
+  bottom: 18px;
+  right: -15px;
+  font-size: 15px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  background-color: rgb(0, 0, 0, 0.85);
+  color: white;
+  cursor: pointer;
+}
+.nav-container {
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 50px;
+}
+.scrolled .nav-container {
+  background-color: inherit;
+  color: black;
+  width: 100%;
+  margin-left: 10px;
+  justify-content: space-around;
+}
+.nav-container a {
+  color: whitesmoke;
+  font-size: 12px;
+}
+.scrolled .nav-container a {
+  color: black;
+  font-weight: bold;
+}
+.nav-container > a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+@keyframes project-pop-up {
+  from {
+    opacity: 0;
+    transform: translateY(100%) rotate(10deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%) rotate(0);
+  }
+}
+
 .fa-regular,
 .fa-cart-arrow-down {
   /* width: 50px; */
@@ -89,7 +205,7 @@
   background-color: white;
   box-shadow: 0px 10px 10px black;
   animation: none;
-  z-index: 2;
+  /* z-index: 2000; */
 }
 .search-close {
   font-size: 25px;
@@ -170,52 +286,6 @@ a {
     opacity: 0;
     transform: translateX(100%);
   }
-}
-
-/* form styles */
-.input {
-  /* font-size: 0.9rem; */
-  /* background-color: transparent; */
-  width: 100%;
-  height: 40px;
-  border: none;
-  /* background-color: red; */
-  /* border-bottom: var(--border-height) solid var(--border-before-color); */
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
-}
-
-.input-border {
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  /* transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045); */
-}
-.input:focus {
-  outline: none;
-}
-.input:focus + .input-border {
-  /* width: 100%; */
-}
-.form-container {
-  position: relative;
-  width: 30%;
-  /* --width-of-input: 300px; */
-}
-.input-alt {
-  font-size: 1.1rem;
-  padding-inline: 1em;
-  padding-block: 0.8em;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-.input-border-alt {
-  height: 3px;
-  background: linear-gradient(90deg, #ff6464 0%, #ffbf59 50%, #47c9ff 100%);
-  transition: width 0.4s cubic-bezier(0.42, 0, 0.58, 1);
-}
-.input-alt:focus + .input-border-alt {
-  width: 100%;
 }
 
 /* categories container styles */
