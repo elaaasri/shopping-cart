@@ -12,10 +12,29 @@ const Header = ({ cartItems, setShowSearchBox }) => {
 
   return (
     <>
-      <header
-        className={`header-container ${!inView ? "scrolled animated" : ""}`}
-      >
-        <div className="header-main">
+      <div className={`header-container ${!inView ? "scrolled animated" : ""}`}>
+        <img
+          className="header-logo"
+          src="/public/icons/logo-icon.webp"
+          alt="header logo image"
+        />
+        <nav className="header-nav">
+          <Link to="/home">HOME</Link>
+          <Link to="/shop">SHOP</Link>
+          <Link>ABOUT</Link>
+        </nav>
+        <div className="header-icons-wrapper">
+          <i
+            onClick={handleSearchIconClick}
+            className="fa-solid fa-magnifying-glass header-icons"
+          />
+          <Link to="/cart" className="header-icons">
+            <i className="fa-solid fa-cart-shopping" />
+            <button>{cartItems.length}</button>
+          </Link>
+        </div>
+
+        {/* <div className="header-main">
           <img
             className="header-logo"
             src="/icons/logo.png"
@@ -31,14 +50,13 @@ const Header = ({ cartItems, setShowSearchBox }) => {
               <button>{cartItems.length}</button>
             </Link>
           </div>
-        </div>
+        </div> */}
+        {/* 
         <nav className="nav-container">
           <Link to="/home">HOME</Link>
           <Link to="/shop">SHOP</Link>
-          {/* click to switch to footer */}
           <Link>ABOUT</Link>
-        </nav>
-
+        </nav> */}
         {/* <nav className="nav-bar-container">
         <Link to="/home">
         <button>Home</button>
@@ -51,7 +69,7 @@ const Header = ({ cartItems, setShowSearchBox }) => {
         <button>{cartItems.length}</button>
         </Link>
         </nav> */}
-      </header>
+      </div>
       <div ref={triggerRef} className="scroll-trigger" />
     </>
   );

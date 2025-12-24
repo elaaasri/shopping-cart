@@ -33,3 +33,7 @@ createRoot(document.getElementById("root")).render(
  * 9- style the app!
  * 10- default for all wrong urls
  */
+
+// loading error pages
+// default path page
+// search place holder

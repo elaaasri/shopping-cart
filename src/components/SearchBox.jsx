@@ -33,8 +33,8 @@ const SearchBox = ({ setShowSearchBox, products }) => {
           onChange={(e) => handleSearchInput(e)}
           type="text"
           className="search-input"
+          placeholder="search products .."
         />
-        <div></div>
         <ShowSearchProducts filteredProducts={filteredProducts} />
       </nav>
     </>
