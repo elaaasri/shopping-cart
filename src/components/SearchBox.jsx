@@ -52,20 +52,21 @@ const ShowSearchProducts = ({ filteredProducts }) => {
   if (filteredProducts.length === 0) {
     return <h5>No Search Results</h5>;
   }
+
   return (
     <div className="searched-products-container">
       {filteredProducts.map((product) => {
-        const { images, title, price, category, id } = product;
+        const { thumbnail, title, price, category, id } = product;
         return (
           <Link key={id} to={`/shop/${category}/${title}`}>
             <div className="searched-product">
               <img
                 className="searched-product-img"
-                src={images[0]}
+                src={thumbnail}
                 alt={`${title} image`}
               />
               <p className="searched-product-title">{title}</p>
-              <p className="searched-product-price">{price}</p>
+              <p className="searched-product-price">{price}$</p>
             </div>
           </Link>
         );

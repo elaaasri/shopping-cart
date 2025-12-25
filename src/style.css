@@ -514,6 +514,7 @@ a {
   flex-wrap: wrap;
   gap: 20px;
   width: 100%;
+  /* z-index: -1; */
 }
 .category-card {
   display: flex;
@@ -557,7 +558,9 @@ a {
 /* shop products container styles */
 .products-container {
   display: flex;
+  /* justify-content: center; */
   padding: 5%;
+  /* background-color: red; */
 }
 .categories-nav {
   display: flex;
@@ -592,28 +595,67 @@ a {
 }
 .clicked-category-nav {
   background-color: rgb(255, 123, 145);
-  transition: background 1s ease-in-out;
+  transition: background 0.5s ease-in-out;
 }
 .products-area {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* gap: 1rem; */
+  gap: 2rem;
   width: 100%;
   justify-items: center;
-  border: yellow 3px solid;
+  /* flex-wrap: wrap; */
+  /* flex: 1; */
+  /* background-color: red; */
+  /* z-index: -1; */
+  /* background-color: red; */
 }
 .product-card {
-  border: solid red 1px;
-  /* filter: drop-shadow(20px 15px 2px rgba(0, 0, 0, 0.5)); */
+  outline: none;
+  border-radius: 3px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
-/* product page styles */
-.product-container {
-  /* display: flex; */
-  border: solid 1px red;
+.product-img-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: min-content;
+  border: solid rgb(124, 124, 124, 0.5) 5px;
 }
-.product img {
-  width: 250px;
-  border: 1px solid green;
+.product-img-area img {
+  width: 100%;
+  min-width: 300px;
+  filter: drop-shadow(15px 10px 2px rgba(0, 0, 0, 0.3));
+  transition: transform 500ms;
+}
+.product-img-area img:hover {
+  transform: scale(1.1);
+}
+.product-img-area img:active {
+  transform: scale(0.8);
+}
+.product-img-area div {
+  background-color: rgb(89, 85, 85);
+  padding: 5px;
+  color: white;
+  border-radius: 3px;
+  font-weight: bold;
+  margin: 10px 10px 0 0;
+  font-size: 11px;
+  align-self: flex-end;
+}
+.product-infos-area {
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+}
+.product-infos-area :nth-child(3) {
+  text-decoration: line-through;
+  color: rgb(52, 52, 52);
 }
 
 /* category shop products container styles */

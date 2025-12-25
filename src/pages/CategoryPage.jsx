@@ -1,9 +1,12 @@
 import { useParams, useOutletContext, Link } from "react-router";
+
 // displays products for a specific category :
 const CategoryPage = () => {
   const { products, categories } = useOutletContext();
   const { category } = useParams();
   const filteredCategoryProducts = getCategoryByName(products, category);
+
+  console.log(filteredCategoryProducts);
 
   return (
     <div className="products-container">
@@ -21,19 +24,37 @@ const CategoryPage = () => {
         })}
       </nav>
       <div className="products-area">
-        {filteredCategoryProducts.map(({ title, price, images, id }) => {
+        {filteredCategoryProducts.map((categoryProduct) => {
+          const {
+            availabilityStatus,
+            discountPercentage,
+            title,
+            price,
+            id,
+            rating,
+            thumbnail,
+          } = categoryProduct;
           return (
             <Link
-              to={`/shop/${category}/${title}`}
               className="product-card"
+              to={`/shop/${category}/${title}`}
               key={id}
             >
-              <div key={id}>
-                <img src={images[0]} alt="" style={{ width: "250px" }} />
-                <div>{title}</div>
-                <div>{price}</div>
-                <h2>image length : {images.length}</h2>
+              <div className="product-img-area">
+                <div>{availabilityStatus}</div>
+                <img src={thumbnail} alt={title + " image"} />
               </div>
+              <div className="product-infos-area">
+                <div>{title.toUpperCase()}</div>
+                <div>{price}$</div>
+                <div>
+                  {((price / (100 - discountPercentage)) * 100).toFixed(2)}$
+                </div>
+                {/* <div>Rating: {rating}</div> */}
+              </div>
+              {/* reviews */}
+              {/* minimumOrderQuantity, */}
+              {/* stock */}
             </Link>
           );
         })}
