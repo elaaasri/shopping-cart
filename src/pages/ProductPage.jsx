@@ -51,3 +51,39 @@ const getProductByTitle = (products, productTitle) => {
     return title === productTitle;
   });
 };
+
+{
+  /* <div className="products-area">
+  {filteredCategoryProducts.map((categoryProduct) => {
+    const {
+      availabilityStatus,
+      discountPercentage,
+      title,
+      price,
+      id,
+      rating,
+      images,
+    } = categoryProduct;
+    return (
+      <Link className="product-card" to={`/shop/${category}/${title}`} key={id}>
+        <div className="product-img-area">
+          <div>{availabilityStatus}</div>
+          <img src={images[0]} alt={title + " image"} />
+        </div>
+        <div className="product-infos-area">
+          <div>{title.toUpperCase()}</div>
+          <div>{price}$</div>
+          <div>{((price / (100 - discountPercentage)) * 100).toFixed(2)}$</div>
+          {/* <div>Rating: {rating}</div> */
+}
+// </div>
+{
+  /* reviews */
+}
+{
+  /* minimumOrderQuantity, */
+}
+{
+  /* stock */
+}
+// </Link>

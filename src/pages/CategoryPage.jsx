@@ -31,8 +31,7 @@ const CategoryPage = () => {
             title,
             price,
             id,
-            rating,
-            thumbnail,
+            images,
           } = categoryProduct;
           return (
             <Link
@@ -42,7 +41,7 @@ const CategoryPage = () => {
             >
               <div className="product-img-area">
                 <div>{availabilityStatus}</div>
-                <img src={thumbnail} alt={title + " image"} />
+                <img src={images[0]} alt={title + " image"} />
               </div>
               <div className="product-infos-area">
                 <div>{title.toUpperCase()}</div>
@@ -50,11 +49,7 @@ const CategoryPage = () => {
                 <div>
                   {((price / (100 - discountPercentage)) * 100).toFixed(2)}$
                 </div>
-                {/* <div>Rating: {rating}</div> */}
               </div>
-              {/* reviews */}
-              {/* minimumOrderQuantity, */}
-              {/* stock */}
             </Link>
           );
         })}
