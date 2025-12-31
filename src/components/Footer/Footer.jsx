@@ -1,17 +1,19 @@
+import styles from "./Footer.module.css";
+
 const Footer = () => {
   return (
-    <footer className="footer-container">
-      <div className="footer-promo-area">
+    <footer className={styles.container}>
+      <div className={styles.promoArea}>
         <h3>BE A PART OF THE ESSENTIALS</h3>
         <p>Enjoy 15% off your first purchase when you sign up!</p>
-        <div className="footer-promo-input">
+        <div className={styles.promoInput}>
           <input type="text" placeholder="enter your email" />
           <button>SUBSCRIBE</button>
         </div>
       </div>
 
-      <div className="footer-second-area">
-        <div className="footer-links">
+      <div className={styles.footerSecondArea}>
+        <div className={styles.links}>
           <table>
             <thead>
               <tr>
@@ -44,42 +46,42 @@ const Footer = () => {
             </tbody>
           </table>
         </div>
-        <div className="footer-contact">
+        <div className={styles.contact}>
           <h4>ASK A ESSENTIALS SPECIALIST</h4>
           <p>
             Whether you’re a collector or visiting for the first time, we’re
             here to help.
           </p>
-          <div className="footer-contact-icons">
+          <div className={styles.contactIcons}>
             <div>
-              <i class="fa-solid fa-phone-volume"></i>
+              <i className="fa-solid fa-phone-volume"></i>
               <p>(000)-ESSENTIALS</p>
             </div>
             <div>
-              <i class="fa-solid fa-envelope"></i>
+              <i className="fa-solid fa-envelope"></i>
               <p>support@essentials.xyz</p>
             </div>
             <div>
-              <i class="fa-solid fa-comment-dots"></i>
+              <i className="fa-solid fa-comment-dots"></i>
               <p>Chat With Us</p>
             </div>
           </div>
         </div>
       </div>
-      <div className="footer-legal">
+      <div className={styles.footerLegal}>
         <p>© 2025 ESSENTIALS</p>
         <p>Privacy Accessibility</p>
         <p>Terms of Service</p>
         <p>Refund Policy</p>
         <p>Conformity</p>
       </div>
-      <div className="footer-tag">
+      <div className={styles.footerTag}>
         <p>Copyright ©</p>
         &nbsp;
         <p>elaaasri</p>
         &nbsp;
         <a href="https://github.com/elaaasri">
-          <i className="footer-git-icon fab fa-github"></i>
+          <i className={`${styles.footerGitIcon} fab fa-github`}></i>
         </a>
       </div>
     </footer>

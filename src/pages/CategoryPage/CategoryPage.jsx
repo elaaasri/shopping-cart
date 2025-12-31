@@ -7,17 +7,16 @@ const CategoryPage = () => {
   const { category } = useParams();
   const filteredCategoryProducts = getCategoryByName(products, category);
 
-  console.log(filteredCategoryProducts);
-
   return (
     <div className={styles.container}>
       <nav className={styles.nav}>
-        {categories.map(({ catName }) => {
+        {categories.map(({ catName }, index) => {
           const isClicked = catName === category;
           return (
             <Link
-              to={`/shop/${catName}`}
               className={isClicked ? styles.clickedCategoryNav : ""}
+              to={`/shop/${catName}`}
+              key={index}
             >
               {catName.toUpperCase()}
             </Link>

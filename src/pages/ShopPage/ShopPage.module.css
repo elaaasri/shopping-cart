@@ -11,10 +11,8 @@
 }
 .title {
   text-align: center;
-  letter-spacing: 0.2rem;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration: underline rgb(197, 68, 90) 1px double;
+  letter-spacing: 0.3rem;
+  font-size: 1.3rem;
 }
 .grid {
   display: flex;
