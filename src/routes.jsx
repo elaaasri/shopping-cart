@@ -1,5 +1,5 @@
 import App from "./App";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/HomePage/HomePage";
 import ShopPage from "./pages/ShopPage/ShopPage";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import CartPage from "./pages/CartPage";
