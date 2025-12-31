@@ -9,6 +9,7 @@
   background-color: black;
   height: 80px;
   width: 100%;
+  z-index: 1000;
 }
 .container.animated {
   transform: translateY(50%);

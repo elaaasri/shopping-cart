@@ -1,4 +1,3 @@
-/* categories container styles */
 .container {
   display: flex;
   flex-direction: column;
@@ -24,7 +23,6 @@
   flex-wrap: wrap;
   gap: 20px;
   width: 100%;
-  /* z-index: -1; */
 }
 .card {
   display: flex;
