@@ -37,4 +37,4 @@ createRoot(document.getElementById("root")).render(
 // loading error pages
 // default path page
 // search place holder
-// zindex
+// z-index

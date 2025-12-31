@@ -20,7 +20,7 @@ const Header = ({ cartItems, setShowSearchBox }) => {
       >
         <img
           className={styles.logo}
-          src="/public/icons/logo-icon.webp"
+          src="/icons/logo-icon.webp"
           alt="header logo image"
         />
         <nav className={styles.nav}>
