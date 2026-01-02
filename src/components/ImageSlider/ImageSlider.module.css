@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  border: red solid 1px;
+}
+.container img {
+  width: 100%;
+  max-width: 450px;
+}
+:global(.swiper-button-next),
+:global(.swiper-button-prev) {
+  color: black;
+}
+:global(.swiper-pagination-bullet) {
+  background-color: black;
+  width: 15px;
+  height: 15px;
+}
