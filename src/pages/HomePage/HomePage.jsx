@@ -11,7 +11,7 @@ const HomePage = () => {
           SHOP NOW
         </Link>
       </div>
-      <img className={styles.img} src="/public/imgs/hero-img2.webp" />
+      <img className={styles.img} src="/imgs/hero-img2.webp" />
     </div>
   );
 };

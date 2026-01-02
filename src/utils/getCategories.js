@@ -6,7 +6,7 @@ const getCategories = (products) => {
     beauty: "/imgs/beauty-img.webp",
     fragrances: "./imgs/fragrances-img.webp",
     furniture: "./imgs/furniture-img.webp",
-    groceries: "/public/imgs/groceries-img.webp",
+    groceries: "/imgs/groceries-img.webp",
   };
 
   // add imgs to its correct category :

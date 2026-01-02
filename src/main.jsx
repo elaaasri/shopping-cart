@@ -34,7 +34,7 @@ createRoot(document.getElementById("root")).render(
  * 10- default for all wrong urls
  */
 
-// loading error pages
+// loading and error components
 // default path page
 // search place holder
 // z-index

@@ -18,11 +18,15 @@ const Header = ({ cartItems, setShowSearchBox }) => {
           !inView ? `${styles.scrolled}  ${styles.animated}` : ""
         }`}
       >
-        <img
-          className={styles.logo}
-          src="/icons/logo-icon.webp"
-          alt="header logo image"
-        />
+        <div className={styles.logoWrapper}>
+          <Link to="/home">
+            <img
+              className={styles.logo}
+              src="/icons/logo-icon.webp"
+              alt="header logo image"
+            />
+          </Link>
+        </div>
         <nav className={styles.nav}>
           <Link to="/home">HOME</Link>
           <Link to="/shop">SHOP</Link>

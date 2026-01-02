@@ -22,6 +22,7 @@ function App() {
         context={{
           products,
           loading,
+          a: "aze",
           error,
           categories,
           cartItems,
