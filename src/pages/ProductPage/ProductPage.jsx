@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { useParams, useOutletContext } from "react-router";
-import QuantityButton from "../../components/QuantityButton";
+import QuantityButton from "../../components/QuantityButton/QuantityButton";
 import styles from "./ProductPage.module.css";
 import { Link } from "react-router";
-import { useLocation } from "react-router";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 
 const ProductPage = () => {
@@ -11,13 +10,6 @@ const ProductPage = () => {
   const { category, title } = useParams();
   const filteredProduct = getProductByTitle(products, title);
   const [productQuantity, setProductQuantity] = useState(1);
-  // const location = useLocation();
-
-  // const navPaths = location.pathname
-  //   .split("/")
-  //   .filter(Boolean)
-  //   .map(decodeURIComponent);
-  // .map((path, index) => (index == 2 ? decodeURIComponent(path) : path));
 
   const handleAddToCart = () => {
     if (productQuantity <= 0) return;
@@ -38,49 +30,89 @@ const ProductPage = () => {
         <Link>{title.toUpperCase()}</Link>
       </nav>
       <div className={styles.productContainer}>
-        {filteredProduct.map(({ title, price, description, images, id }) => {
-          const imgsLength = images.length;
+        {filteredProduct.map(
+          ({ title, price, description, images, discountPercentage, id }) => {
+            const imgsLength = images.length;
 
-          return (
-            <>
-              <div className={styles.imgWrapper}>
-                {imgsLength === 1 ? (
-                  <img
-                    className={styles.img}
-                    src={images[0]}
-                    alt={title + " product image"}
-                  />
-                ) : (
-                  <ImageSlider images={images} title={title} />
-                )}
-              </div>
+            return (
+              <>
+                <div className={styles.imgWrapper}>
+                  {imgsLength === 1 ? (
+                    <img
+                      className={styles.img}
+                      src={images[0]}
+                      alt={title + " product image"}
+                    />
+                  ) : (
+                    <ImageSlider images={images} title={title} />
+                  )}
+                </div>
 
-              <div className={styles.productInfos}>B</div>
-            </>
+                {/* <div className={styles.productInfosArea}>
+                <div>{title.toUpperCase()}</div>
+                <div>{price}$</div>
+                <div>
+                  {((price / (100 - discountPercentage)) * 100).toFixed(2)}$
+                </div>
+              </div> */}
 
-            // classname
-            // <div key={id}>
-            //   {imgsLength === 1 ? (
-            //     <img
-            //       className={styles.img}
-            //       src={images[0]}
-            //       alt={title + " product image"}
-            //     />
-            //   ) : (
-            //     <ImageSlider images={images} title={title} />
-            //   )}
-            //   <QuantityButton
-            //     quantity={productQuantity}
-            //     setQuantity={setProductQuantity}
-            //   />
-            //   <button onClick={handleAddToCart}>Add to Cart</button>
-            //   <div>{title}</div>
-            //   <div>{price}</div>
-            //   <div>{description}</div>
-            //   <h2>image length : {images.length}</h2>
-            // </div>
-          );
-        })}
+                <div className={styles.productInfos}>
+                  <div className={styles.titleArea}>
+                    <span className={styles.title}>{title.toUpperCase()}</span>
+                    <div className={styles.priceContainer}>
+                      <span className={styles.price}>{price}$</span>
+                      <span className={styles.discount}>
+                        {((price / (100 - discountPercentage)) * 100).toFixed(
+                          2
+                        )}
+                        $
+                      </span>
+                    </div>
+                  </div>
+                  <hr />
+                  <span className={styles.description}>{description}</span>
+                  <div className={styles.quantity}>
+                    <span>QUANTITY:</span>
+                    <QuantityButton
+                      quantity={productQuantity}
+                      setQuantity={setProductQuantity}
+                    />
+                  </div>
+                  <button onClick={handleAddToCart}>Add to Cart</button>
+                </div>
+              </>
+
+              // </div>
+              // tags
+              // warranty
+              /* reviews */
+              /* minimumOrderQuantity, */
+              /* stock */
+
+              // classname
+              // <div key={id}>
+              //   {imgsLength === 1 ? (
+              //     <img
+              //       className={styles.img}
+              //       src={images[0]}
+              //       alt={title + " product image"}
+              //     />
+              //   ) : (
+              //     <ImageSlider images={images} title={title} />
+              //   )}
+              //   <QuantityButton
+              //     quantity={productQuantity}
+              //     setQuantity={setProductQuantity}
+              //   />
+              //   <button onClick={handleAddToCart}>Add to Cart</button>
+              //   <div>{title}</div>
+              //   <div>{price}</div>
+              //   <div>{description}</div>
+              //   <h2>image length : {images.length}</h2>
+              // </div>
+            );
+          }
+        )}
       </div>
     </div>
   );

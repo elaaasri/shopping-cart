@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.container input {
+  padding: 2.5%;
+  width: 70px;
+  font-weight: bold;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+}
+.decrease,
+.increase {
+  padding: 2.5% 1.5%;
+  font-weight: bold;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+}

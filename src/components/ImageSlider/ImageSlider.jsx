@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Zoom, Autoplay } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -10,7 +10,6 @@ import styles from "./ImageSlider.module.css";
 const ImageSlider = ({ images, title }) => {
   return (
     <Swiper
-      className={styles.container}
       slidesPerView={1}
       modules={[Navigation, Pagination, Autoplay]}
       navigation

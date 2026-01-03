@@ -34,7 +34,12 @@ createRoot(document.getElementById("root")).render(
  * 10- default for all wrong urls
  */
 
-// loading and error components
+// product page
+// search bar module css
+// cart css
+// about css
 // default path page
-// search place holder
-// z-index
+// loading css
+// error css
+// fix react console errors
+// testing

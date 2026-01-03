@@ -14,7 +14,7 @@
   color: black;
 }
 .nav a:hover {
-  color: rgb(239, 80, 107);
+  color: rgb(196, 0, 95);
 }
 .nav :nth-child(1),
 .nav :nth-child(2) {
@@ -32,6 +32,7 @@
   align-items: center;
   width: 40%;
   border: solid yellow 1px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); */
   /* max-width: 400px; */
 }
 .imgWrapper img {
@@ -39,7 +40,77 @@
   max-width: 450px;
 }
 .productInfos {
-  width: 50%;
-  /* flex: 1; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  gap: 20px;
+  width: 35%;
   border: solid red 1px;
+}
+.titleArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  font-size: 1.3rem;
+  /* padding: 5%; */
+}
+.title {
+  font-weight: bold;
+  color: rgb(196, 0, 95);
+}
+.priceContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.price {
+  font-weight: bold;
+}
+hr {
+  border: none;
+  outline: none;
+  height: 1px;
+  background-color: rgb(52, 52, 52, 0.5);
+  margin: 1.2rem;
+}
+.discount {
+  text-decoration: line-through;
+  color: rgb(52, 52, 52);
+}
+.description {
+  font-size: 15px;
+  color: rgb(18, 16, 16);
+}
+.quantity {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 5% 0%;
+}
+.quantity span {
+  font-weight: bold;
+}
+.anas {
+  background-color: red;
+}
+
+.productCardArea div {
+  background-color: rgb(89, 85, 85);
+  padding: 5px;
+  color: white;
+  border-radius: 3px;
+  font-weight: bold;
+  margin: 10px 10px 0 0;
+  font-size: 11px;
+  align-self: flex-end;
+}
+.productInfosArea {
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+}
+.productInfosArea :nth-child(3) {
+  text-decoration: line-through;
+  color: rgb(52, 52, 52);
 }
