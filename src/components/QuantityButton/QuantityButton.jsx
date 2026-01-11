@@ -16,20 +16,24 @@ const QuantityButton = ({ quantity, setQuantity }) => {
   };
 
   return (
-    <div className={styles.container}>
-      <button className={styles.decrease} onClick={decrease}>
-        -
-      </button>
-      <input
-        type="number"
-        value={quantity}
-        placeholder="how many items?"
-        onChange={(e) => handleChange(e)}
-      />
-      <button className={styles.increase} onClick={increase}>
-        +
-      </button>
-    </div>
+    <>
+      <span>QUANTITY:</span>
+      <div className={styles.container}>
+        <button className={styles.decrease} onClick={decrease}>
+          -
+        </button>
+        <input
+          type="number"
+          min={1}
+          value={quantity}
+          placeholder="how many items?"
+          onChange={(e) => handleChange(e)}
+        />
+        <button className={styles.increase} onClick={increase}>
+          +
+        </button>
+      </div>
+    </>
   );
 };
 

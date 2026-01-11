@@ -10,15 +10,18 @@ const ProductPage = () => {
   const { category, title } = useParams();
   const filteredProduct = getProductByTitle(products, title);
   const [productQuantity, setProductQuantity] = useState(1);
+  const [showAddedToCard, setShowAddedToCard] = useState(0);
 
   const handleAddToCart = () => {
+    setShowAddedToCard((prev) => prev + 1);
     if (productQuantity <= 0) return;
     setCartItems((prev) => [
       ...prev,
       ...Array(productQuantity).fill(filteredProduct).flat(),
     ]);
   };
-  console.log(filteredProduct);
+
+  // console.log(filteredProduct);
 
   return (
     <div className={styles.container}>
@@ -49,7 +52,7 @@ const ProductPage = () => {
                 </div>
 
                 {/* <div className={styles.productInfosArea}>
-                <div>{title.toUpperCase()}</div>
+                <div>{title.toUpperCase()}</div>  
                 <div>{price}$</div>
                 <div>
                   {((price / (100 - discountPercentage)) * 100).toFixed(2)}$
@@ -72,13 +75,22 @@ const ProductPage = () => {
                   <hr />
                   <span className={styles.description}>{description}</span>
                   <div className={styles.quantity}>
-                    <span>QUANTITY:</span>
                     <QuantityButton
                       quantity={productQuantity}
                       setQuantity={setProductQuantity}
                     />
                   </div>
-                  <button onClick={handleAddToCart}>Add to Cart</button>
+                  <button className={styles.button} onClick={handleAddToCart}>
+                    Add to Cart
+                  </button>
+                  <div
+                    key={showAddedToCard}
+                    className={`${styles.test} ${
+                      showAddedToCard ? styles.slideIn : ""
+                    }`}
+                  >
+                    Added To Card!
+                  </div>
                 </div>
               </>
 

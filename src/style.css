@@ -79,8 +79,7 @@ body {
   margin-bottom: 10px;
 }
 .search-close:hover {
-  color: yellow;
-  color: pink;
+  color: rgb(189, 38, 63);
 }
 .search-title {
   text-decoration: underline;

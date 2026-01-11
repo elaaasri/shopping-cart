@@ -4,7 +4,6 @@
   justify-content: center;
   gap: 20px;
   padding: 4%;
-  border: solid red 1px;
 }
 .nav {
   font-size: 13px;
@@ -22,7 +21,6 @@
   text-underline-offset: 6px;
 }
 .productContainer {
-  border: solid 2px green;
   display: flex;
   justify-content: space-around;
 }
@@ -31,9 +29,6 @@
   justify-content: center;
   align-items: center;
   width: 40%;
-  border: solid yellow 1px;
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); */
-  /* max-width: 400px; */
 }
 .imgWrapper img {
   width: 100%;
@@ -42,10 +37,11 @@
 .productInfos {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
-  gap: 20px;
+  gap: 1.3rem;
   width: 35%;
-  border: solid red 1px;
+  padding-left: 3rem;
+  border-left: solid rgba(0, 0, 0, 0.2) 3px;
+  padding-top: 2%;
 }
 .titleArea {
   display: flex;
@@ -53,7 +49,6 @@
   justify-content: center;
   gap: 5px;
   font-size: 1.3rem;
-  /* padding: 5%; */
 }
 .title {
   font-weight: bold;
@@ -72,7 +67,6 @@ hr {
   outline: none;
   height: 1px;
   background-color: rgb(52, 52, 52, 0.5);
-  margin: 1.2rem;
 }
 .discount {
   text-decoration: line-through;
@@ -91,10 +85,6 @@ hr {
 .quantity span {
   font-weight: bold;
 }
-.anas {
-  background-color: red;
-}
-
 .productCardArea div {
   background-color: rgb(89, 85, 85);
   padding: 5px;
@@ -105,12 +95,57 @@ hr {
   font-size: 11px;
   align-self: flex-end;
 }
-.productInfosArea {
+.button {
   text-align: center;
+  padding: 3%;
   font-weight: bold;
-  font-size: 15px;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  width: 50%;
 }
-.productInfosArea :nth-child(3) {
-  text-decoration: line-through;
-  color: rgb(52, 52, 52);
+.button:hover {
+  background-color: black;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+.button:active {
+  transform: translateY(-1px);
+}
+.test {
+  padding: 1%;
+  background-color: white;
+  box-shadow: 0px 10px 10px black;
+  text-align: center;
+  padding: 3%;
+  font-weight: bold;
+  background-color: #bf29a3;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease 0s;
+  outline: none;
+  width: 40%;
+  font-size: 12px;
+  color: white;
+  opacity: 0;
+}
+.test.slideIn {
+  animation: popUp 1200ms;
+}
+@keyframes popUp {
+  from {
+    opacity: 0;
+    transform: translate(-30%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0%);
+  }
 }

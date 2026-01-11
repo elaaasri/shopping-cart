@@ -35,6 +35,7 @@ createRoot(document.getElementById("root")).render(
  */
 
 // product page
+// pop up window for added to card
 // search bar module css
 // cart css
 // about css
