@@ -1,9 +1,10 @@
 import Header from "./components/Header/Header.jsx";
 import { Outlet } from "react-router";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import SearchBox from "./components/SearchBox";
 import getCategories from "./utils/getCategories";
 import Footer from "./components/Footer/Footer.jsx";
+import useFetch from "./hooks/useFetch.js";
 
 const App = () => {
   const { data, loading, error } = useFetch("https://dummyjson.com/products");
@@ -31,27 +32,5 @@ const App = () => {
       <Footer />
     </>
   );
-};
-
-// fetches url :
-const useFetch = (url) => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetch(url)
-      .then((res) => {
-        if (!res.ok)
-          throw new Error(`Request failed with status ${res.status}`);
-
-        return res.json();
-      })
-      .then((data) => setData(data))
-      .catch((error) => setError(error))
-      .finally(() => setLoading(false));
-  }, [url]);
-
-  return { data, loading, error };
 };
 export default App;
