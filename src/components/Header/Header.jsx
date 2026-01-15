@@ -1,8 +1,12 @@
 import { Link } from "react-router";
 import { useInView } from "react-intersection-observer";
 import styles from "./Header.module.css";
+import getGroupedProducts from "../../utils/getGroupedProducts";
 
 const Header = ({ cartItems, setShowSearchBox }) => {
+  const groupedProducts = getGroupedProducts(cartItems);
+  const groupedProductsLength = Object.keys(groupedProducts).length;
+
   const { ref: triggerRef, inView } = useInView({
     threshold: 1,
   });
@@ -39,7 +43,7 @@ const Header = ({ cartItems, setShowSearchBox }) => {
           />
           <Link to="/cart" className={styles.icons}>
             <i className="fa-solid fa-cart-shopping" />
-            <button>{cartItems.length}</button>
+            <button>{groupedProductsLength}</button>
           </Link>
         </div>
       </div>

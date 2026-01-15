@@ -5,7 +5,7 @@ import SearchBox from "./components/SearchBox";
 import getCategories from "./utils/getCategories";
 import Footer from "./components/Footer/Footer.jsx";
 
-function App() {
+const App = () => {
   const { data, loading, error } = useFetch("https://dummyjson.com/products");
   const { products = [] } = data;
   const [cartItems, setCartItems] = useState([]);
@@ -22,7 +22,6 @@ function App() {
         context={{
           products,
           loading,
-          a: "aze",
           error,
           categories,
           cartItems,
@@ -32,7 +31,7 @@ function App() {
       <Footer />
     </>
   );
-}
+};
 
 // fetches url :
 const useFetch = (url) => {

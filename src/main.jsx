@@ -34,8 +34,9 @@ createRoot(document.getElementById("root")).render(
  * 10- default for all wrong urls
  */
 
-// product page
-// pop up window for added to card
+// product page :
+//   ==> pop up window for added to card done
+//   ==> show // tags / warranty reviews */ minimumOrderQuantity, */ stock */
 // search bar module css
 // cart css
 // about css

@@ -22,6 +22,6 @@
 }
 .decrease:hover,
 .increase:hover {
-  background-color: black;
+  background-color: #7e0065;
   color: white;
 }

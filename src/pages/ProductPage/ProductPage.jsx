@@ -12,7 +12,9 @@ const ProductPage = () => {
   const [productQuantity, setProductQuantity] = useState(1);
   const [showAddedToCard, setShowAddedToCard] = useState(0);
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (stock) => {
+    // console.log(stock, productQuantity);
+    // if (productQuantity > stock) return;
     setShowAddedToCard((prev) => prev + 1);
     if (productQuantity <= 0) return;
     setCartItems((prev) => [
@@ -34,7 +36,15 @@ const ProductPage = () => {
       </nav>
       <div className={styles.productContainer}>
         {filteredProduct.map(
-          ({ title, price, description, images, discountPercentage, id }) => {
+          ({
+            title,
+            price,
+            description,
+            images,
+            discountPercentage,
+            stock,
+            id,
+          }) => {
             const imgsLength = images.length;
 
             return (
@@ -50,14 +60,6 @@ const ProductPage = () => {
                     <ImageSlider images={images} title={title} />
                   )}
                 </div>
-
-                {/* <div className={styles.productInfosArea}>
-                <div>{title.toUpperCase()}</div>  
-                <div>{price}$</div>
-                <div>
-                  {((price / (100 - discountPercentage)) * 100).toFixed(2)}$
-                </div>
-              </div> */}
 
                 <div className={styles.productInfos}>
                   <div className={styles.titleArea}>
@@ -80,12 +82,15 @@ const ProductPage = () => {
                       setQuantity={setProductQuantity}
                     />
                   </div>
-                  <button className={styles.button} onClick={handleAddToCart}>
+                  <button
+                    className={styles.button}
+                    onClick={() => handleAddToCart(stock)}
+                  >
                     Add to Cart
                   </button>
                   <div
                     key={showAddedToCard}
-                    className={`${styles.test} ${
+                    className={`${styles.feedBackButton} ${
                       showAddedToCard ? styles.slideIn : ""
                     }`}
                   >

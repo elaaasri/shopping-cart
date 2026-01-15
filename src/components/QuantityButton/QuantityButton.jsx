@@ -25,6 +25,7 @@ const QuantityButton = ({ quantity, setQuantity }) => {
         <input
           type="number"
           min={1}
+          max={100}
           value={quantity}
           placeholder="how many items?"
           onChange={(e) => handleChange(e)}

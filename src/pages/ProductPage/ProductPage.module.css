@@ -37,11 +37,11 @@
 .productInfos {
   display: flex;
   flex-direction: column;
-  gap: 1.3rem;
+  justify-content: center;
+  gap: 1.5rem;
   width: 35%;
   padding-left: 3rem;
   border-left: solid rgba(0, 0, 0, 0.2) 3px;
-  padding-top: 2%;
 }
 .titleArea {
   display: flex;
@@ -118,14 +118,14 @@ hr {
 .button:active {
   transform: translateY(-1px);
 }
-.test {
+.feedBackButton {
   padding: 1%;
   background-color: white;
   box-shadow: 0px 10px 10px black;
   text-align: center;
   padding: 3%;
   font-weight: bold;
-  background-color: #bf29a3;
+  background-color: #7e0065;
   border: none;
   border-radius: 2px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
@@ -135,9 +135,10 @@ hr {
   font-size: 12px;
   color: white;
   opacity: 0;
+  margin-top: -0.5rem;
 }
-.test.slideIn {
-  animation: popUp 1200ms;
+.feedBackButton.slideIn {
+  animation: popUp 2000ms;
 }
 @keyframes popUp {
   from {
