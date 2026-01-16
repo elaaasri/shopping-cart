@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import routes from "./routes.jsx";
+import routes from "./app/routes.jsx";
 import "./style.css";
 
 const router = createBrowserRouter(routes);
@@ -35,8 +35,10 @@ createRoot(document.getElementById("root")).render(
  */
 
 // product page :
-//   ==> pop up window for added to card done
-//   ==> show // tags / warranty reviews */ minimumOrderQuantity, */ stock */
+//   ==> pop up window for added to card : done
+//   ==> fix header products count : done
+//   ==> show // tags / warranty reviews */ minimumOrderQuantity, */ stock */7
+// fix first page landing !
 // search bar module css
 // cart css
 // about css

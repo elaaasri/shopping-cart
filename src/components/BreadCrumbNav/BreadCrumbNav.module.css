@@ -1,0 +1,15 @@
+.nav {
+  font-size: 13px;
+  font-weight: bold;
+}
+.nav a {
+  color: black;
+}
+.nav a:hover {
+  color: rgb(196, 0, 95);
+}
+.nav :nth-child(1),
+.nav :nth-child(2) {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}

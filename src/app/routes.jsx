@@ -1,9 +1,9 @@
 import App from "./App";
-import HomePage from "./pages/HomePage/HomePage";
-import ShopPage from "./pages/ShopPage/ShopPage";
-import CategoryPage from "./pages/CategoryPage/CategoryPage";
-import CartPage from "./pages/CartPage";
-import ProductPage from "./pages/ProductPage/ProductPage";
+import HomePage from "../pages/HomePage/HomePage";
+import ShopPage from "../pages/ShopPage/ShopPage";
+import CategoryPage from "../pages/CategoryPage/CategoryPage";
+import CartPage from "../pages/CartPage";
+import ProductPage from "../pages/ProductPage/ProductPage";
 
 const routes = [
   {

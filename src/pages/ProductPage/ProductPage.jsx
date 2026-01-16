@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useParams, useOutletContext } from "react-router";
+import BreadCrumbNav from "../../components/BreadCrumbNav/BreadCrumbNav";
 import QuantityButton from "../../components/QuantityButton/QuantityButton";
 import styles from "./ProductPage.module.css";
-import { Link } from "react-router";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 
 const ProductPage = () => {
@@ -27,13 +27,7 @@ const ProductPage = () => {
 
   return (
     <div className={styles.container}>
-      <nav className={styles.nav}>
-        <Link to={"/shop"}>SHOP</Link>
-        &nbsp; / &nbsp;
-        <Link to={`/shop/${category}`}>{category.toUpperCase()}</Link>
-        &nbsp; / &nbsp;
-        <Link>{title.toUpperCase()}</Link>
-      </nav>
+      <BreadCrumbNav category={category} title={title} />
       <div className={styles.productContainer}>
         {filteredProduct.map(
           ({
@@ -98,6 +92,8 @@ const ProductPage = () => {
                   </div>
                 </div>
               </>
+
+              //   ==> show // tags / warranty reviews */ minimumOrderQuantity, */ stock */7
 
               // </div>
               // tags
