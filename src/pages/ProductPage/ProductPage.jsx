@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useParams, useOutletContext } from "react-router";
-import BreadCrumbNav from "../../components/BreadCrumbNav/BreadCrumbNav";
-import QuantityButton from "../../components/QuantityButton/QuantityButton";
+import BreadCrumbNav from "./components/BreadCrumbNav/BreadCrumbNav.jsx";
+import ProductImages from "./components/ProductImages/ProductImages.jsx";
+import ProductInfos from "./components/ProductInfos/ProductInfos.jsx";
 import styles from "./ProductPage.module.css";
-import ImageSlider from "../../components/ImageSlider/ImageSlider";
 
 const ProductPage = () => {
   const { products, setCartItems } = useOutletContext();
@@ -13,10 +13,11 @@ const ProductPage = () => {
   const [showAddedToCard, setShowAddedToCard] = useState(0);
 
   const handleAddToCart = (stock) => {
-    // console.log(stock, productQuantity);
     // if (productQuantity > stock) return;
-    setShowAddedToCard((prev) => prev + 1);
+
+    console.log(stock);
     if (productQuantity <= 0) return;
+    setShowAddedToCard((prev) => prev + 1);
     setCartItems((prev) => [
       ...prev,
       ...Array(productQuantity).fill(filteredProduct).flat(),
@@ -28,104 +29,25 @@ const ProductPage = () => {
   return (
     <div className={styles.container}>
       <BreadCrumbNav category={category} title={title} />
+
       <div className={styles.productContainer}>
-        {filteredProduct.map(
-          ({
-            title,
-            price,
-            description,
-            images,
-            discountPercentage,
-            stock,
-            id,
-          }) => {
-            const imgsLength = images.length;
+        {filteredProduct.map((product) => {
+          return (
+            <>
+              <ProductImages product={product} />
+              <ProductInfos
+                product={product}
+                productQuantity={productQuantity}
+                setProductQuantity={setProductQuantity}
+                showAddedToCard={showAddedToCard}
+                handleAddToCart={handleAddToCart}
+              />
+            </>
 
-            return (
-              <>
-                <div className={styles.imgWrapper}>
-                  {imgsLength === 1 ? (
-                    <img
-                      className={styles.img}
-                      src={images[0]}
-                      alt={title + " product image"}
-                    />
-                  ) : (
-                    <ImageSlider images={images} title={title} />
-                  )}
-                </div>
-
-                <div className={styles.productInfos}>
-                  <div className={styles.titleArea}>
-                    <span className={styles.title}>{title.toUpperCase()}</span>
-                    <div className={styles.priceContainer}>
-                      <span className={styles.price}>{price}$</span>
-                      <span className={styles.discount}>
-                        {((price / (100 - discountPercentage)) * 100).toFixed(
-                          2
-                        )}
-                        $
-                      </span>
-                    </div>
-                  </div>
-                  <hr />
-                  <span className={styles.description}>{description}</span>
-                  <div className={styles.quantity}>
-                    <QuantityButton
-                      quantity={productQuantity}
-                      setQuantity={setProductQuantity}
-                    />
-                  </div>
-                  <button
-                    className={styles.button}
-                    onClick={() => handleAddToCart(stock)}
-                  >
-                    Add to Cart
-                  </button>
-                  <div
-                    key={showAddedToCard}
-                    className={`${styles.feedBackButton} ${
-                      showAddedToCard ? styles.slideIn : ""
-                    }`}
-                  >
-                    Added To Card!
-                  </div>
-                </div>
-              </>
-
-              //   ==> show // tags / warranty reviews */ minimumOrderQuantity, */ stock */7
-
-              // </div>
-              // tags
-              // warranty
-              /* reviews */
-              /* minimumOrderQuantity, */
-              /* stock */
-
-              // classname
-              // <div key={id}>
-              //   {imgsLength === 1 ? (
-              //     <img
-              //       className={styles.img}
-              //       src={images[0]}
-              //       alt={title + " product image"}
-              //     />
-              //   ) : (
-              //     <ImageSlider images={images} title={title} />
-              //   )}
-              //   <QuantityButton
-              //     quantity={productQuantity}
-              //     setQuantity={setProductQuantity}
-              //   />
-              //   <button onClick={handleAddToCart}>Add to Cart</button>
-              //   <div>{title}</div>
-              //   <div>{price}</div>
-              //   <div>{description}</div>
-              //   <h2>image length : {images.length}</h2>
-              // </div>
-            );
-          }
-        )}
+            //   ==> show // tags / warranty reviews */ minimumOrderQuantity, */ stock */
+            // product page keys
+          );
+        })}
       </div>
     </div>
   );
@@ -138,39 +60,3 @@ const getProductByTitle = (products, productTitle) => {
     return title === productTitle;
   });
 };
-
-{
-  /* <div className="products-area">
-  {filteredCategoryProducts.map((categoryProduct) => {
-    const {
-      availabilityStatus,
-      discountPercentage,
-      title,
-      price,
-      id,
-      rating,
-      images,
-    } = categoryProduct;
-    return (
-      <Link className="product-card" to={`/shop/${category}/${title}`} key={id}>
-        <div className="product-img-area">
-          <div>{availabilityStatus}</div>
-          <img src={images[0]} alt={title + " image"} />
-        </div>
-        <div className="product-infos-area">
-          <div>{title.toUpperCase()}</div>
-          <div>{price}$</div>
-          <div>{((price / (100 - discountPercentage)) * 100).toFixed(2)}$</div>
-          {/* <div>Rating: {rating}</div> */
-}
-// </div>
-{
-  /* reviews */
-}
-{
-  /* minimumOrderQuantity, */
-}
-{
-  /* stock */
-}
-// </Link>
