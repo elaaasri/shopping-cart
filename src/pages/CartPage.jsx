@@ -1,11 +1,9 @@
 import { useOutletContext } from "react-router";
 import PaymentSection from "../components/PaymentSection";
-import getGroupedProducts from "../utils/getGroupedProducts";
+// import getGroupedProducts from "../utils/getGroupedProducts";
 
 const CartPage = () => {
-  const { cartItems, setCartItems } = useOutletContext();
-  const groupedProducts = getGroupedProducts(cartItems);
-
+  const { organizedProducts, setCartItems } = useOutletContext();
   // const [allProductsPrice, setAllProductsPrice] = useState(0);
 
   // filters cartItems by the removed item (using product title):
@@ -17,9 +15,9 @@ const CartPage = () => {
 
   return (
     <div className="cart-container">
-      {Object.entries(groupedProducts).length}
+      {Object.entries(organizedProducts).length}
       <h1>YOUR CART</h1>
-      {Object.entries(groupedProducts).map(
+      {Object.entries(organizedProducts).map(
         ([productTitle, productsArr], index) => {
           const { images, price } = productsArr[0];
           const totalPrice = Number(price * productsArr.length).toFixed(2);
@@ -37,7 +35,7 @@ const CartPage = () => {
               </button>
             </div>
           );
-        }
+        },
       )}
       <PaymentSection allProductsPrice={allProductsPrice} />
     </div>

@@ -6,16 +6,19 @@ import ProductInfos from "./components/ProductInfos/ProductInfos.jsx";
 import styles from "./ProductPage.module.css";
 
 const ProductPage = () => {
-  const { products, setCartItems, cartItems } = useOutletContext();
+  const { products, setCartItems, organizedProducts } = useOutletContext();
   const { category, title } = useParams();
-  const filteredProduct = getProductByTitle(products, title);
   const [productQuantity, setProductQuantity] = useState(1);
   const [showAddedToCard, setShowAddedToCard] = useState(0);
+  const filteredProduct = products.filter((p) => p.title === title);
 
   const checkProductStock = (stock) => {
-    const currentProductQuantity = cartItems.filter(
-      (p) => p.title === title,
-    ).length;
+    // const currentProductQuantity = cartItems.filter(
+    //   (p) => p.title === title,
+    // ).length;
+
+    const currentProductQuantity = Object.keys(organizedProducts).length;
+
     // if (currentProductQuantity + productQuantity > stock) {
     //   alert("Product Out of Stock!");
     //   return;
@@ -26,6 +29,7 @@ const ProductPage = () => {
 
   const handleAddToCart = (stock, title) => {
     const isProductStockAvailable = checkProductStock(stock);
+
     console.log(isProductStockAvailable);
 
     if (!isProductStockAvailable) {
@@ -81,11 +85,5 @@ const ProductPage = () => {
     </div>
   );
 };
-export default ProductPage;
 
-// fitlers products by category name :
-const getProductByTitle = (products, productTitle) => {
-  return products.filter(({ title }) => {
-    return title === productTitle;
-  });
-};
+export default ProductPage;

@@ -38,6 +38,7 @@ const CategoryPage = () => {
               className={styles.productCard}
               to={`/shop/${category}/${title}`}
               key={id}
+              state={{ test: categoryProduct }}
             >
               <div className={styles.productCardArea}>
                 <div>{availabilityStatus}</div>
