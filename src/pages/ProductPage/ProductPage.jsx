@@ -6,16 +6,41 @@ import ProductInfos from "./components/ProductInfos/ProductInfos.jsx";
 import styles from "./ProductPage.module.css";
 
 const ProductPage = () => {
-  const { products, setCartItems } = useOutletContext();
+  const { products, setCartItems, cartItems } = useOutletContext();
   const { category, title } = useParams();
   const filteredProduct = getProductByTitle(products, title);
   const [productQuantity, setProductQuantity] = useState(1);
   const [showAddedToCard, setShowAddedToCard] = useState(0);
 
-  const handleAddToCart = (stock) => {
-    // if (productQuantity > stock) return;
+  const checkProductStock = (stock) => {
+    const currentProductQuantity = cartItems.filter(
+      (p) => p.title === title,
+    ).length;
+    // if (currentProductQuantity + productQuantity > stock) {
+    //   alert("Product Out of Stock!");
+    //   return;
+    // }
+    const allProductQuantity = currentProductQuantity + productQuantity;
+    return stock > allProductQuantity;
+  };
 
-    console.log(stock);
+  const handleAddToCart = (stock, title) => {
+    const isProductStockAvailable = checkProductStock(stock);
+    console.log(isProductStockAvailable);
+
+    if (!isProductStockAvailable) {
+      alert("Product Out of Stock!");
+      return;
+    }
+
+    // const currentProductQuantity = cartItems.filter(
+    //   (p) => p.title === title,
+    // ).length;
+    // if (currentProductQuantity + productQuantity > stock) {
+    //   alert("Product Out of Stock!");
+    //   return;
+    // }
+
     if (productQuantity <= 0) return;
     setShowAddedToCard((prev) => prev + 1);
     setCartItems((prev) => [
@@ -43,9 +68,13 @@ const ProductPage = () => {
                 handleAddToCart={handleAddToCart}
               />
             </>
-
+            // fix stock done
+            // quntity button wont include decimals  !!!
+            // show msg !!!
             //   ==> show // tags / warranty reviews */ minimumOrderQuantity, */ stock */
             // product page keys
+            // go to cart button
+            // cart page link !
           );
         })}
       </div>

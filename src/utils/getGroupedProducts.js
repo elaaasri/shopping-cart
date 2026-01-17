@@ -10,4 +10,5 @@ const getGroupedProducts = (ungroupedProducts) => {
     return acc;
   }, {});
 };
+
 export default getGroupedProducts;
