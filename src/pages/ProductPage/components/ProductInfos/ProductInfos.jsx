@@ -1,6 +1,5 @@
 import styles from "./ProductInfos.module.css";
 import QuantityButton from "../../../../components/QuantityButton/QuantityButton";
-import { useState } from "react";
 
 const ProductInfos = ({
   product,
@@ -10,9 +9,6 @@ const ProductInfos = ({
   handleAddToCart,
 }) => {
   const { title, price, discountPercentage, description, stock } = product;
-  const [zbe, getZbe] = useState(false);
-  //   console.log(product);
-  //   console.log(id);
 
   return (
     <div className={styles.productInfos}>
@@ -48,10 +44,6 @@ const ProductInfos = ({
       >
         Added To Card!
       </div>
-      <span className={styles.test}>
-        We do not have enough stocks for your current order. Contact us directly
-        to get more information
-      </span>
     </div>
   );
 };

@@ -21,11 +21,10 @@ const App = () => {
         organizedProducts={organizedProducts}
         setShowSearchBox={setShowSearchBox}
       />
+
       {showSearchBox && (
         <SearchBox setShowSearchBox={setShowSearchBox} products={products} />
       )}
-
-      {/* products remove */}
 
       <Outlet
         context={{
