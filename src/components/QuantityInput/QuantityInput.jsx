@@ -1,18 +1,24 @@
-import styles from "./QuantityButton.module.css";
+import styles from "./QuantityInput.module.css";
 
 // increases and decreases product quantity :
-const QuantityButton = ({ quantity, setQuantity }) => {
+const QuantityInput = ({ quantity, setQuantity, stock }) => {
   const increase = () => {
     setQuantity((prev) => prev + 1);
   };
+
   const decrease = () => {
     if (quantity <= 1) return;
     setQuantity((prev) => prev - 1);
   };
+
   const handleChange = (e) => {
     const { value } = e.target;
     const inputValue = Number(value);
     setQuantity(inputValue);
+  };
+
+  const preventDecimals = (e) => {
+    if (e.key === "." || e.key == ",") e.preventDefault();
   };
 
   return (
@@ -24,8 +30,11 @@ const QuantityButton = ({ quantity, setQuantity }) => {
         </button>
         <input
           type="number"
+          min={1}
+          max={stock}
           value={quantity}
           placeholder="how many items?"
+          onKeyDown={(e) => preventDecimals(e)}
           onChange={(e) => handleChange(e)}
         />
         <button className={styles.increase} onClick={increase}>
@@ -36,4 +45,4 @@ const QuantityButton = ({ quantity, setQuantity }) => {
   );
 };
 
-export default QuantityButton;
+export default QuantityInput;

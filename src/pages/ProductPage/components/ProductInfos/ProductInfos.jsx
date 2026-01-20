@@ -1,5 +1,5 @@
 import styles from "./ProductInfos.module.css";
-import QuantityButton from "../../../../components/QuantityButton/QuantityButton";
+import QuantityInput from "../../../../components/QuantityInput/QuantityInput";
 
 const ProductInfos = ({
   product,
@@ -25,9 +25,10 @@ const ProductInfos = ({
       <span className={styles.description}>{description}</span>
       <span>{stock}</span>
       <div className={styles.quantity}>
-        <QuantityButton
+        <QuantityInput
           quantity={productQuantity}
           setQuantity={setProductQuantity}
+          stock={stock}
         />
       </div>
       <button

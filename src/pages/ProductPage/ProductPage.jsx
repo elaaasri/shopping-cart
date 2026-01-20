@@ -35,6 +35,7 @@ const ProductPage = () => {
       ...Array(productQuantity).fill(filteredProduct),
     ]);
   };
+
   return (
     <div className={styles.container}>
       <BreadCrumbNav category={category} title={title} />
@@ -61,9 +62,9 @@ export default ProductPage;
 //
 // fix stock done
 // fix checkProductStock and show msg done
-// quntity button wont include decimals  !!!
+// quntity button wont include decimals  done
 //   ==> show // tags / warranty reviews */ minimumOrderQuantity, */ stock */
-// product page keys
+// product page key error!
 // go to cart button
 // cart page link !
-// clean products outlet and getCategoryByName from CategoryPage
+// clean products outlet and getCategoryByName from CategoryPage and add discount to the product
