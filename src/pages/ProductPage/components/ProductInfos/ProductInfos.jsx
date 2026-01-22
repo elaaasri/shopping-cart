@@ -1,5 +1,5 @@
 import styles from "./ProductInfos.module.css";
-import QuantityInput from "../../../../components/QuantityInput/QuantityInput";
+import QuantityInput from "../../../../components/QuantityInput/QuantityInput.jsx";
 
 const ProductInfos = ({
   product,
@@ -11,7 +11,7 @@ const ProductInfos = ({
   const { title, price, discountPercentage, description, stock } = product;
 
   return (
-    <div className={styles.productInfos}>
+    <div className={styles.infosContainer}>
       <div className={styles.titleArea}>
         <span className={styles.title}>{title.toUpperCase()}</span>
         <div className={styles.priceContainer}>
@@ -23,7 +23,6 @@ const ProductInfos = ({
       </div>
       <hr />
       <span className={styles.description}>{description}</span>
-      <span>{stock}</span>
       <div className={styles.quantity}>
         <QuantityInput
           quantity={productQuantity}

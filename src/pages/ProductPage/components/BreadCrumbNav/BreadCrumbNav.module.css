@@ -1,6 +1,7 @@
 .nav {
   font-size: 13px;
   font-weight: bold;
+  margin-bottom: 30px;
 }
 .nav a {
   color: black;

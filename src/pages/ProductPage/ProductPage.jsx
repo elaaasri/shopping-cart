@@ -3,6 +3,7 @@ import { useParams, useOutletContext } from "react-router";
 import BreadCrumbNav from "./components/BreadCrumbNav/BreadCrumbNav.jsx";
 import ProductImages from "./components/ProductImages/ProductImages.jsx";
 import ProductInfos from "./components/ProductInfos/ProductInfos.jsx";
+import ProductReviews from "./components/ProductReviews/ProductReviews.jsx";
 import styles from "./ProductPage.module.css";
 
 const ProductPage = () => {
@@ -37,22 +38,21 @@ const ProductPage = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.productContainer}>
       <BreadCrumbNav category={category} title={title} />
-      <div className={styles.productContainer}>
-        {filteredProduct && (
-          <>
-            <ProductImages product={filteredProduct} />
-            <ProductInfos
-              product={filteredProduct}
-              productQuantity={productQuantity}
-              setProductQuantity={setProductQuantity}
-              showAddedToCard={showAddedToCard}
-              handleAddToCart={handleAddToCart}
-            />
-          </>
-        )}
-      </div>
+      {filteredProduct && (
+        <div className={styles.productWrapper}>
+          <ProductImages product={filteredProduct} />
+          <ProductInfos
+            product={filteredProduct}
+            productQuantity={productQuantity}
+            setProductQuantity={setProductQuantity}
+            showAddedToCard={showAddedToCard}
+            handleAddToCart={handleAddToCart}
+          />
+          <ProductReviews product={filteredProduct} />
+        </div>
+      )}
     </div>
   );
 };
@@ -62,9 +62,13 @@ export default ProductPage;
 //
 // fix stock done
 // fix checkProductStock and show msg done
-// quntity button wont include decimals  done
+// quntity button wont include decimals done
 //   ==> show // tags / warranty reviews */ minimumOrderQuantity, */ stock */
 // product page key error!
 // go to cart button
 // cart page link !
 // clean products outlet and getCategoryByName from CategoryPage and add discount to the product
+
+// returnPolicy
+// shippingInformation
+// warrantyInformation

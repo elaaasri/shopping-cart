@@ -1,10 +1,9 @@
-.productInfos {
+.infosContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1.5rem;
-  width: 35%;
-  padding-left: 3rem;
+  gap: 1.2rem;
+  padding: 0 4rem;
   border-left: solid rgba(0, 0, 0, 0.2) 3px;
 }
 .titleArea {
@@ -16,6 +15,7 @@
 }
 .title {
   font-weight: bold;
+  font-size: 1.5rem;
   color: rgb(196, 0, 95);
 }
 .priceContainer {
@@ -48,16 +48,6 @@ hr {
 }
 .quantity span {
   font-weight: bold;
-}
-.productCardArea div {
-  background-color: rgb(89, 85, 85);
-  padding: 5px;
-  color: white;
-  border-radius: 3px;
-  font-weight: bold;
-  margin: 10px 10px 0 0;
-  font-size: 11px;
-  align-self: flex-end;
 }
 .button {
   text-align: center;
@@ -99,7 +89,6 @@ hr {
   font-size: 12px;
   color: white;
   opacity: 0;
-  margin-top: -0.5rem;
 }
 .feedBackButton.slideIn {
   animation: popUp 2000ms;
