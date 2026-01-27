@@ -1,4 +1,4 @@
-import { useOutletContext } from "react-router";
+import { useOutletContext, Link } from "react-router";
 import PaymentSection from "../../components/PaymentSection";
 import styles from "./CartPage.module.css";
 
@@ -7,6 +7,18 @@ const CartPage = () => {
   const handleRemoveButton = (productTitle) => {
     setCartItems((prev) => prev.filter((item) => item.title !== productTitle));
   };
+
+  const test = Object.entries(organizedProducts).length;
+  console.log(test);
+
+  if (test <= 0) {
+    return (
+      <div className={styles.emptyCart}>
+        <h3>YOUR CART IS LOOKING EMPTY</h3>
+        <Link to="/shop">SHOP NOW</Link>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.cartPageCotainer}>
@@ -56,44 +68,3 @@ const CartPage = () => {
   );
 };
 export default CartPage;
-
-// fix stock done
-// fix checkProductStock and show msg done
-// quntity button wont include decimals done
-// product reviews component done
-// product page key done
-// go to cart button done
-// fix footer table css! done
-// add cart page and its module css // add default for 0 products
-// add payment section page and its module css
-// clean products outlet and getCategoryByName from CategoryPage and add discount to the product
-// cart page link !
-// add with to header on scrolling!
-// fix css containers names!
-
-// returnPolicy
-// shippingInformation
-// warrantyInformation
-
-// return (
-//   <div className="cart-container">
-//     {organizedProductsArr.length}
-//     <h1>YOUR CART</h1>
-//     {organizedProductsArr.map(([title, productsArr], index) => {
-//       const { images, price } = productsArr[0];
-//       const productTotalPrice = +(price * productsArr.length).toFixed(2);
-
-//       return (
-//         <div key={index} className="cart-product">
-//           <img src={images[0]} style={{ width: "50px" }} />
-//           <div>title: {title}</div>
-//           <div>price: {price}</div>
-//           <div>quantity: {productsArr.length}</div>
-//           <div>total: {productTotalPrice}</div>
-//           <button onClick={() => handleRemoveButton(title)}>remove</button>
-//         </div>
-//       );
-//     })}
-//     <PaymentSection organizedProductsArr={organizedProductsArr} />;
-//   </div>
-// );

@@ -62,3 +62,21 @@
 .buttonCell:active {
   transform: translateY(-1px);
 }
+.emptyCart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  height: 80vh;
+  color: rgba(0, 0, 0, 0.741);
+}
+.emptyCart a {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  color: rgba(0, 0, 0, 0.741);
+}
+.emptyCart a:hover {
+  color: black;
+  cursor: pointer;
+}

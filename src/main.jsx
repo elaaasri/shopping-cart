@@ -11,6 +11,24 @@ createRoot(document.getElementById("root")).render(
   </StrictMode>,
 );
 
+// fix stock done
+// fix checkProductStock and show msg done
+// quntity button wont include decimals done
+// product reviews component done
+// product page key done
+// go to cart button done
+// fix footer table css! done
+// add cart page and its module css done // ==> add default for 0 products
+// add payment section page and its module css
+// clean products outlet and getCategoryByName from CategoryPage and add discount to the product
+// cart page link !
+// add with to header on scrolling!
+// fix css containers names!
+
+// returnPolicy
+// shippingInformation
+// warrantyInformation
+
 /*
  * 1- three pages (home, shop and card) ==> DONE !
  * 2- pages should be shown all the time so the user can navigate between them ==> DONE!
