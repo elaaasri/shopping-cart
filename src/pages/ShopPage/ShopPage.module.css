@@ -11,8 +11,9 @@
 }
 .title {
   text-align: center;
-  letter-spacing: 0.5rem;
   font-size: 1.3rem;
+  letter-spacing: 5px;
+  color: rgba(180, 49, 49, 0.6);
 }
 .grid {
   display: flex;

@@ -18,11 +18,11 @@ createRoot(document.getElementById("root")).render(
 // product page key done
 // go to cart button done
 // fix footer table css! done
-// add cart page and its module css done // ==> add default for 0 products
+// add cart page and its module css done
+// add default for 0 products done
 // add payment section page and its module css
 // clean products outlet and getCategoryByName from CategoryPage and add discount to the product
-// cart page link !
-// add with to header on scrolling!
+// add width to header on scrolling!
 // fix css containers names!
 
 // returnPolicy

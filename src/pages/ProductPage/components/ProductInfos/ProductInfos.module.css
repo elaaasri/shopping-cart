@@ -80,9 +80,10 @@ hr {
   padding: 3%;
   font-weight: bold;
   background-color: #7e0065;
+  background-color: rgba(182, 57, 57, 0.5);
   border: none;
   border-radius: 2px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.8);
   transition: all 0.3s ease 0s;
   outline: none;
   width: 40%;

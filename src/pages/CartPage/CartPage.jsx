@@ -1,5 +1,5 @@
 import { useOutletContext, Link } from "react-router";
-import PaymentSection from "../../components/PaymentSection";
+import PaymentSection from "../../components/PaymentSection/PaymentSection";
 import styles from "./CartPage.module.css";
 
 const CartPage = () => {
@@ -8,10 +8,7 @@ const CartPage = () => {
     setCartItems((prev) => prev.filter((item) => item.title !== productTitle));
   };
 
-  const test = Object.entries(organizedProducts).length;
-  console.log(test);
-
-  if (test <= 0) {
+  if (!Object.keys(organizedProducts).length) {
     return (
       <div className={styles.emptyCart}>
         <h3>YOUR CART IS LOOKING EMPTY</h3>
@@ -22,7 +19,7 @@ const CartPage = () => {
 
   return (
     <div className={styles.cartPageCotainer}>
-      <h2 className={styles.title}>YOUR CART</h2>
+      <h3 className={styles.title}>YOUR CART</h3>
       <table className={styles.cartTable}>
         <thead className={styles.tableHead}>
           <tr>
