@@ -62,20 +62,20 @@
   flex: 1;
   border-right: solid rgba(255, 255, 255, 0.545) 1px;
 }
-table {
+.footerTable {
   border-spacing: 100px 8px;
 }
-th,
-td {
+.footerTable th,
+.footerTable td {
   text-align: left;
 }
-th {
+.footerTable th {
   padding-bottom: 10px;
 }
-td {
+.footerTable td {
   cursor: pointer;
 }
-td:hover {
+.footerTable td:hover {
   text-decoration: underline;
   color: pink;
 }

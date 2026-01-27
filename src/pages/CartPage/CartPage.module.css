@@ -1,0 +1,64 @@
+.cartPageCotainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.title {
+  letter-spacing: 5px;
+}
+.cartTable {
+  width: 80%;
+  border-collapse: collapse;
+  font-weight: bold;
+}
+.tableHead {
+  font-size: 12px;
+}
+.tableHead th {
+  text-align: start;
+  padding: 1%;
+}
+.tableHead,
+.tableRow {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.tableRow td {
+  text-align: center;
+}
+.productCell {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.productCell img {
+  width: 100px;
+  border: solid 5px rgba(180, 49, 49, 0.3);
+  margin: 20px;
+}
+.buttonCell {
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  font-size: 12px;
+  text-align: end;
+}
+.buttonCell:hover {
+  background-color: black;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+  text-decoration: underline;
+}
+.buttonCell:active {
+  transform: translateY(-1px);
+}

@@ -14,7 +14,7 @@ const Footer = () => {
 
       <div className={styles.footerSecondArea}>
         <div className={styles.links}>
-          <table>
+          <table className={styles.footerTable}>
             <thead>
               <tr>
                 <th>COMPANY</th>

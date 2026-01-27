@@ -32,6 +32,7 @@ const Header = ({ setShowSearchBox, organizedProducts }) => {
         <nav className={styles.nav}>
           <Link to="/home">HOME</Link>
           <Link to="/shop">SHOP</Link>
+          <Link to="/cart">CART</Link>
           <Link>ABOUT</Link>
         </nav>
         <div className={styles.iconsWrapper}>

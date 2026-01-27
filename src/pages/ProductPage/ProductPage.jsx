@@ -58,17 +58,3 @@ const ProductPage = () => {
 };
 
 export default ProductPage;
-
-//
-// fix stock done
-// fix checkProductStock and show msg done
-// quntity button wont include decimals done
-//   ==> show // tags / warranty reviews */ minimumOrderQuantity, */ stock */
-// product page key error!
-// go to cart button
-// cart page link !
-// clean products outlet and getCategoryByName from CategoryPage and add discount to the product
-
-// returnPolicy
-// shippingInformation
-// warrantyInformation

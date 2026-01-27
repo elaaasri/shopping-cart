@@ -7,7 +7,9 @@ const ProductReviews = ({ product }) => {
     <div className={styles.productReviewContainer}>
       <div className={styles.testimonialsArea}>
         <h4>TESTIMONIALS</h4>
-        <h2>Take a Look at What Our Amazing Clients Have Said</h2>
+        <h2>
+          Take a Look at What Our Amazing Clients Have Said About This Product
+        </h2>
         <div className={styles.ratingArea}>
           <i className="fa-solid fa-star" />
           <h2>{rating}</h2>
