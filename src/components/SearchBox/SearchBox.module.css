@@ -1,0 +1,74 @@
+/* search bar container styles */
+.searchOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+.searchBarContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 4% 2%;
+  max-width: 50%;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0%;
+  right: 0%;
+  background-color: white;
+  box-shadow: 0px 10px 10px black;
+  animation: none;
+  z-index: 1000;
+}
+.searchBarContainer.slideIn {
+  animation: slide-in 500ms;
+}
+.searchBarContainer.slideOut {
+  animation: slide-out 500ms;
+}
+.close {
+  font-size: 25px;
+  width: fit-content;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.close:hover {
+  color: rgb(189, 38, 63);
+}
+.title {
+  text-decoration: underline;
+}
+.input {
+  background-color: #dadada;
+  padding: 2%;
+  font-weight: bold;
+  border: none;
+  outline: none;
+}
+.input:focus {
+  border: solid 1px black;
+}
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@keyframes slide-out {
+  from {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}

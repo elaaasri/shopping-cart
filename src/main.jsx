@@ -20,7 +20,8 @@ createRoot(document.getElementById("root")).render(
 // fix footer table css! done
 // add cart page and its module css done
 // add default for 0 products done
-// add payment section page and its module css
+// add payment section page and its module css done
+// add search file and css module done
 // clean products outlet and getCategoryByName from CategoryPage and add discount to the product
 // add width to header on scrolling!
 // fix css containers names!

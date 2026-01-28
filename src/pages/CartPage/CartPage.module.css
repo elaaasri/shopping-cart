@@ -35,7 +35,7 @@
   align-items: center;
 }
 .productCell img {
-  width: 100px;
+  width: 120px;
   border: solid 5px rgba(180, 49, 49, 0.3);
   margin: 20px;
 }

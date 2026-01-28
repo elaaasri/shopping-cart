@@ -1,7 +1,7 @@
 import Header from "../components/Header/Header.jsx";
 import { Outlet } from "react-router";
 import { useState } from "react";
-import SearchBox from "../components/SearchBox.jsx";
+import SearchBox from "../components/SearchBox/SearchBox.jsx";
 import getCategories from "../utils/getCategories.js";
 import Footer from "../components/Footer/Footer.jsx";
 import useFetch from "../hooks/useFetch.js";
