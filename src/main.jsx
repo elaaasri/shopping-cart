@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import routes from "./app/routes.jsx";
-import "./style.css";
+import "./styles.css";
 
 const router = createBrowserRouter(routes);
 createRoot(document.getElementById("root")).render(
@@ -22,9 +22,17 @@ createRoot(document.getElementById("root")).render(
 // add default for 0 products done
 // add payment section page and its module css done
 // add search file and css module done
-// clean products outlet and getCategoryByName from CategoryPage and add discount to the product
-// add width to header on scrolling!
-// fix css containers names!
+// fix comments review width to be fixed! done
+// fix style.css file done
+// add width to header on scrolling! done
+// fix css containers names! done
+// clean products outlet and getCategoryByName from CategoryPage and add discount to the product done
+
+// fix first page in routes!
+// default page for :
+// error
+// loading
+// add about page
 
 // returnPolicy
 // shippingInformation

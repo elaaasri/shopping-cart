@@ -2,7 +2,7 @@ import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
-    <footer className={styles.container}>
+    <footer className={styles.footerContainer}>
       <div className={styles.promoArea}>
         <h3>BE A PART OF THE ESSENTIALS</h3>
         <p>Enjoy 15% off your first purchase when you sign up!</p>
@@ -46,6 +46,7 @@ const Footer = () => {
             </tbody>
           </table>
         </div>
+
         <div className={styles.contact}>
           <h4>ASK A ESSENTIALS SPECIALIST</h4>
           <p>
@@ -68,6 +69,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
       <div className={styles.footerLegal}>
         <p>© 2025 ESSENTIALS</p>
         <p>Privacy Accessibility</p>
@@ -75,6 +77,7 @@ const Footer = () => {
         <p>Refund Policy</p>
         <p>Conformity</p>
       </div>
+
       <div className={styles.footerTag}>
         <p>Copyright ©</p>
         &nbsp;

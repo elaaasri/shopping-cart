@@ -13,7 +13,7 @@ const SearchBox = ({ setShowSearchBox, products }) => {
 
   const handleSearchInput = (e) => {
     const searchValue = e.target.value.toLowerCase().trim();
-    const filteredProducts = products.filter(({ title }) =>
+    const filteredProducts = products?.filter(({ title }) =>
       title.toLowerCase().includes(searchValue),
     );
     setSearchedProducts(filteredProducts);

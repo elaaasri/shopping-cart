@@ -24,7 +24,7 @@ const QuantityInput = ({ quantity, setQuantity, stock }) => {
   return (
     <>
       <span>QUANTITY:</span>
-      <div className={styles.container}>
+      <div className={styles.quantityContainer}>
         <button className={styles.decrease} onClick={decrease}>
           -
         </button>

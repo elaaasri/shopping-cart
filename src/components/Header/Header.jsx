@@ -16,7 +16,7 @@ const Header = ({ setShowSearchBox, organizedProducts }) => {
   return (
     <>
       <div
-        className={`${styles.container} ${
+        className={`${styles.headerContainer} ${
           !inView ? `${styles.scrolled}  ${styles.animated}` : ""
         }`}
       >
@@ -46,7 +46,7 @@ const Header = ({ setShowSearchBox, organizedProducts }) => {
           </Link>
         </div>
       </div>
-      <div ref={triggerRef} className="scroll-trigger" />
+      <div ref={triggerRef} className={styles.scrollTrigger} />
     </>
   );
 };

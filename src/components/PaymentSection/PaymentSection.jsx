@@ -7,7 +7,7 @@ const PaymentSection = ({ organizedProducts }) => {
   };
 
   const allProductsPrice = Object.entries(organizedProducts)
-    .reduce((sum, [, products]) => {
+    ?.reduce((sum, [, products]) => {
       const prices = products[0].price * products.length;
       return sum + prices;
     }, 0)
@@ -18,7 +18,7 @@ const PaymentSection = ({ organizedProducts }) => {
       <div className={styles.priceArea}>
         <span>TOTAL</span>
         <span>{allProductsPrice}</span>
-        <span>Shipping and taxes computed at checkout</span>
+        <span>Shipping and taxes computed at checkout!</span>
       </div>
       <div className={styles.checkoutArea}>
         <button onClick={handleCheckoutButton}>CHECKOUT</button>

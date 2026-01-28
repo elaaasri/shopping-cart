@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import styles from "./HomePage.module.css";
 const HomePage = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.homePageContainer}>
       <div className={styles.heroContent}>
         <h1>ESSENTIALS.</h1>
         <h4>YOUR FAVORITE FINDS, ALL IN ONE PLACE.</h4>

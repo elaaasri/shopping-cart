@@ -4,7 +4,7 @@ const ProductReviews = ({ product }) => {
   const { reviews, rating } = product;
 
   return (
-    <div className={styles.productReviewContainer}>
+    <div className={styles.reviewContainer}>
       <div className={styles.testimonialsArea}>
         <h4>TESTIMONIALS</h4>
         <h2>
