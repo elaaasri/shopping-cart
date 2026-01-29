@@ -11,23 +11,23 @@ const routes = [
     element: <App />,
     children: [
       {
-        path: "/home",
+        index: true,
         element: <HomePage />,
       },
       {
-        path: "/shop",
+        path: "shop",
         element: <ShopPage />,
       },
       {
-        path: "/shop/:category",
+        path: "shop/:category",
         element: <CategoryPage />,
       },
       {
-        path: "/shop/:category/:title",
+        path: "shop/:category/:title",
         element: <ProductPage />,
       },
       {
-        path: "/cart",
+        path: "cart",
         element: <CartPage />,
       },
     ],

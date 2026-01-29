@@ -21,7 +21,7 @@ const Header = ({ setShowSearchBox, organizedProducts }) => {
         }`}
       >
         <div className={styles.logoWrapper}>
-          <Link to="/home">
+          <Link to="/">
             <img
               className={styles.logo}
               src="/icons/logo-icon.webp"
@@ -30,10 +30,9 @@ const Header = ({ setShowSearchBox, organizedProducts }) => {
           </Link>
         </div>
         <nav className={styles.nav}>
-          <Link to="/home">HOME</Link>
+          <Link to="/">HOME</Link>
           <Link to="/shop">SHOP</Link>
           <Link to="/cart">CART</Link>
-          <Link>ABOUT</Link>
         </nav>
         <div className={styles.iconsWrapper}>
           <i

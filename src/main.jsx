@@ -28,15 +28,11 @@ createRoot(document.getElementById("root")).render(
 // fix css containers names! done
 // clean products outlet and getCategoryByName from CategoryPage and add discount to the product done
 
-// fix first page in routes!
+// fix first page in routes! done
 // default page for :
 // error
 // loading
 // add about page
-
-// returnPolicy
-// shippingInformation
-// warrantyInformation
 
 /*
  * 1- three pages (home, shop and card) ==> DONE !
