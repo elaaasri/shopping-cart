@@ -29,10 +29,10 @@ createRoot(document.getElementById("root")).render(
 // clean products outlet and getCategoryByName from CategoryPage and add discount to the product done
 // fix first page in routes! done
 
-// default page for :
+// default page :
+// wrong path done
 // error
 // loading
-// add about page
 
 /*
  * 1- three pages (home, shop and card) ==> DONE !

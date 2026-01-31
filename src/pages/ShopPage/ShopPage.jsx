@@ -1,12 +1,12 @@
 import { Link, useOutletContext } from "react-router";
 import styles from "./ShopPage.module.css";
 
-// displays all available product categories :
 const ShopPage = () => {
   const { loading, error, categories } = useOutletContext();
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>A network error was encountered</p>;
+  if (loading) return <h1 className={styles.loading}>Loading...</h1>;
+  if (error)
+    return <h1 className={styles.error}>A Network Error was Encountered!</h1>;
 
   return (
     <div className={styles.container}>

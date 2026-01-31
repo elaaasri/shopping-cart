@@ -7,8 +7,6 @@ import Footer from "../components/Footer/Footer.jsx";
 import useFetch from "../hooks/useFetch.js";
 import getOrganizedProducts from "../utils/getOrganizedProducts.js";
 
-import HomePage from "../pages/HomePage/HomePage.jsx";
-
 const App = () => {
   const { data, loading, error } = useFetch("https://dummyjson.com/products");
   const { products = [] } = data;
