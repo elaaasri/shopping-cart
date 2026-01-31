@@ -27,8 +27,8 @@ createRoot(document.getElementById("root")).render(
 // add width to header on scrolling! done
 // fix css containers names! done
 // clean products outlet and getCategoryByName from CategoryPage and add discount to the product done
-
 // fix first page in routes! done
+
 // default page for :
 // error
 // loading

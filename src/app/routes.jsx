@@ -4,6 +4,7 @@ import ShopPage from "../pages/ShopPage/ShopPage";
 import CategoryPage from "../pages/CategoryPage/CategoryPage";
 import ProductPage from "../pages/ProductPage/ProductPage";
 import CartPage from "../pages/CartPage/CartPage";
+import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 
 const routes = [
   {
@@ -29,6 +30,10 @@ const routes = [
       {
         path: "cart",
         element: <CartPage />,
+      },
+      {
+        path: "*",
+        element: <NotFoundPage />,
       },
     ],
   },

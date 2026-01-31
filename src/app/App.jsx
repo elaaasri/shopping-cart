@@ -27,8 +27,6 @@ const App = () => {
         <SearchBox setShowSearchBox={setShowSearchBox} products={products} />
       )}
 
-      {/* <HomePage /> */}
-
       <Outlet
         context={{
           products,

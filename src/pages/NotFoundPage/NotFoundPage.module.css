@@ -1,0 +1,54 @@
+.notFoundPageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+.notFoundPageContainer img {
+  width: 350px;
+}
+.notFoundPageContainer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.notFoundPageContainer div span:first-child {
+  font-weight: bold;
+  font-size: 2rem;
+}
+.notFoundPageContainer div span:nth-child(2) {
+  font-size: 7rem;
+}
+.notFoundPageContainer div span:nth-child(3) {
+  font-weight: bold;
+}
+.button {
+  text-align: center;
+  padding: 3%;
+  font-weight: bold;
+  color: #000;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  margin-top: 10px;
+  width: 40%;
+  font-size: 12px;
+}
+.button:hover {
+  background-color: rgba(180, 49, 49, 0.3);
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-7px);
+  color: white;
+}
+.button:active {
+  transform: translateY(-1px);
+}
+.link {
+  display: contents;
+  background-color: red;
+}
