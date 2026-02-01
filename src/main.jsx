@@ -28,11 +28,10 @@ createRoot(document.getElementById("root")).render(
 // fix css containers names! done
 // clean products outlet and getCategoryByName from CategoryPage and add discount to the product done
 // fix first page in routes! done
-
 // default page :
 // wrong path done
-// error
-// loading
+// error done
+// loading done
 
 /*
  * 1- three pages (home, shop and card) ==> DONE !
@@ -52,21 +51,8 @@ createRoot(document.getElementById("root")).render(
  *        ==> allows user to increase/decrease quantity ==> done
  *        ==> allows removing! => done
  * 7- Clear out any missing in props validation errors in your app! => done
- * 8- make sure to test the app using React Testing Library, dont use (react-router-dom!),
- * 9- style the app!
- * 10- default for all wrong urls
+ * 10- default for all wrong urls ==> DONE!
+ * 9- style the app! ==> DONE!
+ *  - fix images path in assets! ==> DONE!
+ *  - make sure to test the app using React Testing Library, dont use (react-router-dom!),
  */
-
-// product page :
-//   ==> pop up window for added to card : done
-//   ==> fix header products count : done
-//   ==> show // tags / warranty reviews */ minimumOrderQuantity, */ stock */7
-// fix first page landing !
-// search bar module css
-// cart css
-// about css
-// default path page
-// loading css
-// error css
-// fix react console errors
-// testing

@@ -1,5 +1,7 @@
 import { Link } from "react-router";
 import styles from "./HomePage.module.css";
+import heroImage from "/src/assets/imgs/hero-img.webp";
+
 const HomePage = () => {
   return (
     <div className={styles.homePageContainer}>
@@ -11,7 +13,7 @@ const HomePage = () => {
           SHOP NOW
         </Link>
       </div>
-      <img className={styles.img} src="/imgs/hero-img2.webp" />
+      <img className={styles.img} src={heroImage} />
     </div>
   );
 };

@@ -13,6 +13,7 @@ const ShopPage = () => {
       <h3 className={styles.title}>CATEGORIES</h3>
       <div className={styles.grid}>
         {categories.map(({ catName, catImg }, index) => {
+          console.log(catImg);
           return (
             <Link to={`/shop/${catName}`} className={styles.card} key={index}>
               <img
