@@ -40,10 +40,12 @@
   font-size: 12px;
 }
 .button:hover {
-  background-color: rgba(180, 49, 49, 0.3);
+  background-color: rgba(47, 162, 203, 0.3);
   box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
   transform: translateY(-7px);
   color: white;
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
 .button:active {
   transform: translateY(-1px);

@@ -11,28 +11,6 @@ createRoot(document.getElementById("root")).render(
   </StrictMode>,
 );
 
-// fix stock done
-// fix checkProductStock and show msg done
-// quntity button wont include decimals done
-// product reviews component done
-// product page key done
-// go to cart button done
-// fix footer table css! done
-// add cart page and its module css done
-// add default for 0 products done
-// add payment section page and its module css done
-// add search file and css module done
-// fix comments review width to be fixed! done
-// fix style.css file done
-// add width to header on scrolling! done
-// fix css containers names! done
-// clean products outlet and getCategoryByName from CategoryPage and add discount to the product done
-// fix first page in routes! done
-// default page :
-// wrong path done
-// error done
-// loading done
-
 /*
  * 1- three pages (home, shop and card) ==> DONE !
  * 2- pages should be shown all the time so the user can navigate between them ==> DONE!
@@ -54,5 +32,12 @@ createRoot(document.getElementById("root")).render(
  * 10- default for all wrong urls ==> DONE!
  * 9- style the app! ==> DONE!
  *  - fix images path in assets! ==> DONE!
- *  - make sure to test the app using React Testing Library, dont use (react-router-dom!),
+//  - make sure to test the app using React Testing Library, dont use (react-router-dom!).
+ *
  */
+
+// test the app :
+// using react testing library.
+// Be careful not to test react-router-dom directly,
+
+// in cart page allow users to increase/decrease the quantity of items in their cart.
