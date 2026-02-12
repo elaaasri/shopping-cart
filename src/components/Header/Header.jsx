@@ -23,11 +23,7 @@ const Header = ({ setShowSearchBox, organizedProducts }) => {
       >
         <div className={styles.logoWrapper}>
           <Link to="/">
-            <img
-              className={styles.logo}
-              src={logoIcon}
-              alt="header logo image"
-            />
+            <img className={styles.logo} src={logoIcon} alt="header logo" />
           </Link>
         </div>
         <nav className={styles.nav}>
