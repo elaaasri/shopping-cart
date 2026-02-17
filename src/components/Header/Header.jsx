@@ -35,8 +35,13 @@ const Header = ({ setShowSearchBox, organizedProducts }) => {
           <i
             onClick={handleSearchIconClick}
             className={`fa-solid fa-magnifying-glass ${styles.icons}`}
+            data-testid="search-icon"
           />
-          <Link to="/cart" className={styles.icons}>
+          <Link
+            to="/cart"
+            className={styles.icons}
+            data-testid="cart-icon-link"
+          >
             <i className="fa-solid fa-cart-shopping" />
             <button>{organizedProductsLength}</button>
           </Link>

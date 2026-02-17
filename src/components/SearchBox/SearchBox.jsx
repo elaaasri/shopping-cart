@@ -21,7 +21,11 @@ const SearchBox = ({ setShowSearchBox, products }) => {
 
   return (
     <>
-      <div className={styles.searchOverlay} onClick={handleCloseIconClick} />
+      <div
+        className={styles.searchOverlay}
+        onClick={handleCloseIconClick}
+        data-testid="search-overlay"
+      />
       <nav
         className={`${styles.searchBarContainer} ${
           !boxAnimation ? styles.slideIn : styles.slideOut
