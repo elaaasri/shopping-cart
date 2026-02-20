@@ -13,7 +13,7 @@ const HomePage = () => {
           SHOP NOW
         </Link>
       </div>
-      <img className={styles.img} src={heroImage} />
+      <img className={styles.img} src={heroImage} data-testid="hero-image" />
     </div>
   );
 };

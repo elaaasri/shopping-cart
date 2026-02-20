@@ -18,6 +18,5 @@ describe("App", () => {
     expect(screen.getByRole("heading", { level: 1 }).textContent).toMatch(
       /ESSENTIALS/i,
     );
-    screen.debug();
   });
 });

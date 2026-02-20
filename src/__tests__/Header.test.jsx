@@ -18,14 +18,12 @@ describe("Header", () => {
     const logo = screen.getByRole("img", { name: /header logo/i });
     expect(logo).toBeInTheDocument();
     expect(logo).toHaveAttribute("src", "/src/assets/icons/logo-icon.webp");
-    screen.debug();
   });
 
   it("renders header links", () => {
     const nav = screen.getByRole("navigation");
     const links = within(nav).getAllByRole("link");
     expect(links).toHaveLength(3);
-    screen.debug();
   });
 
   it("renders links paths", async () => {
@@ -52,8 +50,6 @@ describe("Header", () => {
     expect(shopLink).toHaveAttribute("href", "/shop");
     expect(cartLink).toHaveAttribute("href", "/cart");
     expect(cartIcon).toHaveAttribute("href", "/cart");
-
-    screen.debug();
   });
 
   it("renders search icon and overlay", async () => {
@@ -67,7 +63,5 @@ describe("Header", () => {
     const overlay = screen.getByTestId("search-overlay");
     expect(popupText).toBeInTheDocument();
     expect(overlay).toBeInTheDocument();
-
-    screen.debug();
   });
 });
