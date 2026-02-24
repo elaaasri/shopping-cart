@@ -38,7 +38,7 @@ const CartPage = () => {
               <tbody key={index}>
                 <tr className={styles.tableRow}>
                   <td className={styles.productCell}>
-                    <img src={images[0]} />
+                    <img src={images?.[0]} />
                     <span>{title}</span>
                   </td>
                   <td>

@@ -26,7 +26,7 @@ const CategoryProducts = ({ products, categoryName }) => {
           >
             <div className={styles.productCardArea}>
               <div>{availabilityStatus}</div>
-              <img src={images[0]} alt={title + " image"} />
+              <img src={images?.[0]} alt={title + " image"} />
             </div>
             <div className={styles.productInfosArea}>
               <div>{title.toUpperCase()}</div>

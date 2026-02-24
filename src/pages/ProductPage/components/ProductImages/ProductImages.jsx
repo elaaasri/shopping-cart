@@ -10,7 +10,7 @@ const ProductImages = ({ product }) => {
       {imgsLength === 1 ? (
         <img
           className={styles.img}
-          src={images[0]}
+          src={images?.[0]}
           alt={title + " product image"}
         />
       ) : (

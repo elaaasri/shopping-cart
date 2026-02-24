@@ -6,6 +6,7 @@ import CategoryProducts from "./components/CategoryProducts.jsx";
 const CategoryPage = () => {
   const { products, categories } = useOutletContext();
   const { category: categoryName } = useParams();
+  console.log(categories, products);
 
   return (
     <div className={styles.categoryContainer}>
