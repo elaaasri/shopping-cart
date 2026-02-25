@@ -4,6 +4,7 @@ import { render, screen } from "@testing-library/react";
 import { vi, describe, it, expect, beforeEach } from "vitest";
 import userEvent from "@testing-library/user-event";
 import CategoryPage from "../pages/CategoryPage/CategoryPage";
+import ProductPage from "../pages/ProductPage/ProductPage";
 
 vi.spyOn(reactRouter, "useOutletContext").mockReturnValue({
   // test two categories
@@ -23,15 +24,18 @@ vi.spyOn(reactRouter, "useOutletContext").mockReturnValue({
   ],
 });
 
-vi.spyOn(reactRouter, "useParams").mockReturnValue({
-  category: "beauty",
-});
+vi.mock("/src/pages/ProductPage/ProductPage.jsx", () => ({
+  default: () => <div>Product Page Mock</div>,
+}));
 
 describe("Shop Page", () => {
   beforeEach(() => {
     render(
-      <MemoryRouter>
-        <CategoryPage />
+      <MemoryRouter initialEntries={["/shop/beauty"]}>
+        <Routes>
+          <Route path="/shop/:category" element={<CategoryPage />} />
+          <Route path="/shop/:category/:title" element={<ProductPage />} />
+        </Routes>
       </MemoryRouter>,
     );
   });
@@ -62,6 +66,11 @@ describe("Shop Page", () => {
       "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp",
     );
   });
-});
 
-// check image src on shoppage
+  it("renders correct product path", async () => {
+    const product = screen.getByText(/Essence Mascara Lash Princess/i);
+    await userEvent.click(product);
+    const text = await screen.findByText("Product Page Mock");
+    expect(text).toBeInTheDocument();
+  });
+});
