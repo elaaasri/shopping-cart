@@ -6,6 +6,8 @@ const CategoryProducts = ({ products, categoryName }) => {
     ({ category }) => category == categoryName,
   );
 
+  console.log(filteredCategoryProducts);
+
   return (
     <div className={styles.productsArea}>
       {filteredCategoryProducts.map((categoryProducts) => {
