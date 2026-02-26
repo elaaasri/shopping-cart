@@ -3,7 +3,7 @@ import ImageSlider from "../../../../components/ImageSlider/ImageSlider";
 
 const ProductImages = ({ product }) => {
   const { images, title } = product;
-  const imgsLength = images.length;
+  const imgsLength = images?.length;
 
   return (
     <div className={styles.imgWrapper}>

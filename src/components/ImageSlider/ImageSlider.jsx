@@ -17,7 +17,7 @@ const ImageSlider = ({ images, title }) => {
       loop={true}
       autoplay={{ delay: 2500, disableOnInteraction: true }}
     >
-      {images.map((image, index) => (
+      {images?.map((image, index) => (
         <SwiperSlide key={index}>
           <div className={styles.imgWrapper}>
             <img src={image} alt={title + " product image"} />

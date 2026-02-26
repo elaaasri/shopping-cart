@@ -31,7 +31,6 @@ describe("Shop Page", () => {
   it("renders shop page headline", () => {
     const headline = screen.getByRole("heading", { name: /CATEGORIES/i });
     expect(headline).toBeInTheDocument();
-    screen.debug(headline);
   });
 
   it("renders categories links", () => {

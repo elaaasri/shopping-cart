@@ -8,7 +8,7 @@ const PaymentSection = ({ organizedProducts }) => {
 
   const allProductsPrice = Object.entries(organizedProducts)
     ?.reduce((sum, [, products]) => {
-      const prices = products[0].price * products.length;
+      const prices = products[0]?.price * products?.length;
       return sum + prices;
     }, 0)
     .toFixed(2);

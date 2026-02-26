@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import styles from "./ShowSearchProducts.module.css";
 
 const ShowSearchProducts = ({ searchedProducts }) => {
-  if (!searchedProducts.length) {
+  if (!searchedProducts?.length) {
     return <h5>No Search Results!</h5>;
   }
 

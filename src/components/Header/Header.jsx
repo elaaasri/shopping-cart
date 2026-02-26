@@ -4,7 +4,7 @@ import logoIcon from "/src/assets/icons/logo-icon.webp";
 import styles from "./Header.module.css";
 
 const Header = ({ setShowSearchBox, organizedProducts }) => {
-  const organizedProductsLength = Object.keys(organizedProducts).length;
+  const organizedProductsLength = Object.keys(organizedProducts)?.length;
 
   const { ref: triggerRef, inView } = useInView({
     threshold: 1,

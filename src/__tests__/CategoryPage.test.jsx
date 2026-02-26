@@ -43,7 +43,6 @@ describe("Shop Page", () => {
   it("renders category page nav links", () => {
     expect(screen.getByText(/beauty/i)).toBeInTheDocument();
     expect(screen.getByText(/fragrances/i)).toBeInTheDocument();
-    screen.debug();
   });
 
   it("renders category page nav paths", async () => {

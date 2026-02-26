@@ -8,7 +8,7 @@ const CartPage = () => {
     setCartItems((prev) => prev.filter((item) => item.title !== productTitle));
   };
 
-  if (!Object.keys(organizedProducts).length) {
+  if (!Object.keys(organizedProducts)?.length) {
     return (
       <div className={styles.emptyCart}>
         <h3>YOUR CART IS LOOKING EMPTY</h3>
@@ -32,7 +32,7 @@ const CartPage = () => {
         {Object.entries(organizedProducts).map(
           ([title, productsArr], index) => {
             const { images, price } = productsArr[0];
-            const productTotalPrice = +(price * productsArr.length).toFixed(2);
+            const productTotalPrice = +(price * productsArr?.length).toFixed(2);
 
             return (
               <tbody key={index}>
@@ -44,7 +44,7 @@ const CartPage = () => {
                   <td>
                     <div>{price}</div>
                   </td>
-                  <td>{productsArr.length}</td>
+                  <td>{productsArr?.length}</td>
                   <td>{productTotalPrice}</td>
                   <td>
                     <button
