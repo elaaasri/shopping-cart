@@ -11,7 +11,7 @@ const ProductPage = () => {
   const { category, title } = useParams();
   const [productQuantity, setProductQuantity] = useState(1);
   const [showAddedToCard, setShowAddedToCard] = useState(0);
-  const filteredProduct = products.find((p) => p.title === title);
+  const filteredProduct = products?.find((p) => p.title === title);
 
   const checkProductStock = (stock, title) => {
     const currentProductQuantity = organizedProducts[title]?.length || 0;

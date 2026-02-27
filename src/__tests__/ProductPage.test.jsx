@@ -6,13 +6,15 @@ import userEvent from "@testing-library/user-event";
 import ProductPage from "../pages/ProductPage/ProductPage";
 import ShopPage from "../pages/ShopPage/ShopPage";
 import CategoryPage from "../pages/CategoryPage/CategoryPage";
+import QuantityInput from "../components/QuantityInput/QuantityInput";
+import { exp } from "three/tsl";
 
 //   const { products, setCartItems, organizedProducts } = useOutletContext();
 vi.spyOn(reactRouter, "useOutletContext").mockReturnValue({
   products: [
     {
       id: 1,
-      title: "Essence Mascara Lash Princess",
+      title: "productTitle",
       description:
         "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
       category: "beauty",
@@ -67,9 +69,7 @@ vi.mock("/src/pages/CategoryPage/CategoryPage.jsx", () => ({
 describe("Shop Page", () => {
   beforeEach(() => {
     render(
-      <MemoryRouter
-        initialEntries={["/shop/beauty/Essence-Mascara-Lash-Princess"]}
-      >
+      <MemoryRouter initialEntries={["/shop/beauty/productTitle"]}>
         <Routes>
           <Route path="/shop" element={<ShopPage />} />
           <Route path="/shop/:category" element={<CategoryPage />} />
@@ -81,7 +81,7 @@ describe("Shop Page", () => {
 
   it("renders product title", () => {
     expect(
-      screen.getByText(/Essence-Mascara-Lash-Princess/i),
+      screen.getByText(/Essence Mascara Lash Princess/i),
     ).toBeInTheDocument();
   });
 
@@ -104,7 +104,40 @@ describe("Shop Page", () => {
     const categoryText = await screen.findByText(/Category Page Mock/i);
     expect(categoryText).toBeInTheDocument();
   });
+
+  it("renders quantity input", async () => {
+    const input = screen.getByRole("spinbutton");
+    expect(input).toHaveValue(1);
+
+    const increaseBtn = screen.getByRole("button", { name: "+" });
+    const decreaseBtn = screen.getByRole("button", { name: "-" });
+
+    await userEvent.click(increaseBtn);
+    expect(input).toHaveValue(2);
+
+    await userEvent.click(decreaseBtn);
+    expect(input).toHaveValue(1);
+  });
+
+  it("renders add to cart button", async () => {
+    const addToCartBtn = screen.getByRole("button", { name: /Add To Cart/i });
+
+    await userEvent.click(addToCartBtn);
+    const addedText = await screen.findByText(/Added To Card/i);
+    expect(addedText).toBeInTheDocument();
+
+    // const input = screen.getByRole("spinbutton");
+    // expect(input).toHaveValue(1);
+    // const increaseBtn = screen.getByRole("button", { name: "+" });
+    // const decreaseBtn = screen.getByRole("button", { name: "-" });
+    // expect(input).toHaveValue(2);
+    // await userEvent.click(decreaseBtn);
+    // expect(input).toHaveValue(1);
+  });
 });
+// QUANTITY:
+// Add to Cart
+// Added To Card!
 // style groceries to green
 // fix images paths on shop page component
 // screen debug
