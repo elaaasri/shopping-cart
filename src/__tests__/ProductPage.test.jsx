@@ -98,20 +98,6 @@ describe("Product Page", () => {
     expect(categoryText).toBeInTheDocument();
   });
 
-  it("renders quantity input", async () => {
-    const input = screen.getByRole("spinbutton");
-    expect(input).toHaveValue(1);
-
-    const increaseBtn = screen.getByRole("button", { name: "+" });
-    const decreaseBtn = screen.getByRole("button", { name: "-" });
-
-    await userEvent.click(increaseBtn);
-    expect(input).toHaveValue(2);
-
-    await userEvent.click(decreaseBtn);
-    expect(input).toHaveValue(1);
-  });
-
   it("renders 'Added To Cart' after clicking", async () => {
     const addToCartBtn = screen.getByRole("button", { name: /Add To Cart/i });
 

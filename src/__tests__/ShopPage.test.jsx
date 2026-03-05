@@ -49,3 +49,12 @@ describe("Shop Page", () => {
     expect(text).toBeInTheDocument();
   });
 });
+
+// quantity input
+// payment section
+
+// footer git
+// add loading and error tests
+// add search box
+// add image slider
+// not found page
