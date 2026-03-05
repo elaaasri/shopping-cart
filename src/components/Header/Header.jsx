@@ -43,7 +43,9 @@ const Header = ({ setShowSearchBox, organizedProducts }) => {
             data-testid="cart-icon-link"
           >
             <i className="fa-solid fa-cart-shopping" />
-            <button>{organizedProductsLength}</button>
+            <button data-testid="cart-button-count">
+              {organizedProductsLength}
+            </button>
           </Link>
         </div>
       </div>

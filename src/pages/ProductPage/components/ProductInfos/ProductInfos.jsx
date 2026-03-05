@@ -13,7 +13,9 @@ const ProductInfos = ({
   return (
     <div className={styles.infosContainer}>
       <div className={styles.titleArea}>
-        <span className={styles.title}>{title.toUpperCase()}</span>
+        <span className={styles.title} data-testid="product-title">
+          {title.toUpperCase()}
+        </span>
         <div className={styles.priceContainer}>
           <span className={styles.price}>{price}$</span>
           <span className={styles.discount}>
@@ -42,7 +44,7 @@ const ProductInfos = ({
           showAddedToCard ? styles.slideIn : ""
         }`}
       >
-        Added To Card!
+        Added To Cart!
       </div>
     </div>
   );

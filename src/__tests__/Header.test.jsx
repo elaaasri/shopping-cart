@@ -9,7 +9,10 @@ describe("Header", () => {
   beforeEach(() => {
     render(
       <MemoryRouter>
-        <Header organizedProducts={{}} setShowSearchBox={vi.fn()} />
+        <Header
+          organizedProducts={{ propTest: "test" }}
+          setShowSearchBox={vi.fn()}
+        />
       </MemoryRouter>,
     );
   });
@@ -63,5 +66,10 @@ describe("Header", () => {
     const overlay = screen.getByTestId("search-overlay");
     expect(popupText).toBeInTheDocument();
     expect(overlay).toBeInTheDocument();
+  });
+
+  it("renders header cart count", async () => {
+    const cartIcon = screen.getByTestId("cart-button");
+    expect(cartIcon).toHaveTextContent("1");
   });
 });
