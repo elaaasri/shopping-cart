@@ -3,7 +3,7 @@ import styles from "./PaymentSection.module.css";
 
 const PaymentSection = ({ organizedProducts }) => {
   const handleCheckoutButton = () => {
-    alert("Checkout successful!");
+    alert("Checkout Successful!");
   };
 
   const allProductsPrice = Object.entries(organizedProducts)

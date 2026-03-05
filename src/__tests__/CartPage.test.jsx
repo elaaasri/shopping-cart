@@ -3,7 +3,6 @@ import { vi, describe, it, expect, beforeEach } from "vitest";
 import userEvent from "@testing-library/user-event";
 import { createMemoryRouter, RouterProvider } from "react-router";
 import routes from "../app/routes";
-import { exp } from "three/tsl";
 
 vi.mock("/src/hooks/useFetch.js", () => ({
   default: () => ({
@@ -54,6 +53,7 @@ describe("Cart Page empty state", () => {
     await userEvent.click(shopLink);
 
     const mockText = await screen.findByText("Shop Page Mock");
+
     expect(mockText).toBeInTheDocument();
   });
 });
@@ -81,9 +81,21 @@ describe("Cart Page with Items", () => {
     expect(screen.getByText(/YOUR CART IS LOOKING EMPTY/i)).toBeInTheDocument();
   });
 
-  //
+  it("renders checkout button", async () => {
+    const addBtn = screen.getByRole("button", { name: /add to cart/i });
+    await userEvent.click(addBtn);
+
+    const cartLink = screen.getByRole("link", { name: /cart/i });
+    await userEvent.click(cartLink);
+
+    const mockAlert = vi.spyOn(window, "alert").mockImplementation(() => {});
+    const checkoutBtn = screen.getByRole("button", { name: /CHECKOUT/i });
+    await userEvent.click(checkoutBtn);
+
+    expect(mockAlert).toHaveBeenCalledWith("Checkout Successful!");
+  });
 });
 
 // header count to 0
 // stock
-// searchu
+// search
