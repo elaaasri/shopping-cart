@@ -66,33 +66,42 @@ describe("Cart Page with Items", () => {
     render(<RouterProvider router={router} />);
   });
 
-  it("renders remove button after adding the product to the cart", async () => {
+  const goToCartWithItem = async () => {
     const addBtn = screen.getByRole("button", { name: /add to cart/i });
     await userEvent.click(addBtn);
 
     const cartLink = screen.getByRole("link", { name: /cart/i });
     await userEvent.click(cartLink);
+  };
+
+  it("renders remove button after adding the product to the cart", async () => {
+    await goToCartWithItem();
 
     expect(screen.getByText(/productTitle/i)).toBeInTheDocument();
 
-    const rmvBrn = screen.getByRole("button", { name: /Remove/i });
-    await userEvent.click(rmvBrn);
+    const removeBtn = screen.getByRole("button", { name: /Remove/i });
+    await userEvent.click(removeBtn);
 
     expect(screen.getByText(/YOUR CART IS LOOKING EMPTY/i)).toBeInTheDocument();
   });
 
   it("renders checkout button", async () => {
-    const addBtn = screen.getByRole("button", { name: /add to cart/i });
-    await userEvent.click(addBtn);
-
-    const cartLink = screen.getByRole("link", { name: /cart/i });
-    await userEvent.click(cartLink);
+    await goToCartWithItem();
 
     const mockAlert = vi.spyOn(window, "alert").mockImplementation(() => {});
     const checkoutBtn = screen.getByRole("button", { name: /CHECKOUT/i });
     await userEvent.click(checkoutBtn);
 
     expect(mockAlert).toHaveBeenCalledWith("Checkout Successful!");
+  });
+
+  it("renders keep shoping link", async () => {
+    await goToCartWithItem();
+
+    const shopLink = screen.getByRole("link", { name: /KEEP SHOPING/i });
+    await userEvent.click(shopLink);
+
+    expect(await screen.findByText(/Shop Page Mock/i)).toBeInTheDocument();
   });
 });
 
