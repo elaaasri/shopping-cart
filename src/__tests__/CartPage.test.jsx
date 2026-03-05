@@ -53,7 +53,6 @@ describe("Cart Page empty state", () => {
     await userEvent.click(shopLink);
 
     const mockText = await screen.findByText("Shop Page Mock");
-
     expect(mockText).toBeInTheDocument();
   });
 });
@@ -111,18 +110,4 @@ describe("Cart Page with Items", () => {
 
     expect(await screen.findByText(/Shop Page Mock/i)).toBeInTheDocument();
   });
-
-  // it("renders header cart count when clicking", async () => {
-  //   const addToCartBtn = screen.getByRole("button", { name: /Add To Cart/i });
-
-  //   await userEvent.click(addToCartBtn);
-
-  //   const cartBtnCount = screen.getByTestId("cart-button-count");
-  //   expect(cartBtnCount).toBeInTheDocument();
-  //   expect(cartBtnCount).toHaveTextContent("1");
-  // });
 });
-
-// header count to 0
-// stock
-// search

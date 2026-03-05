@@ -69,7 +69,7 @@ describe("Header", () => {
   });
 
   it("renders header cart count", async () => {
-    const cartIcon = screen.getByTestId("cart-button");
+    const cartIcon = screen.getByTestId("cart-button-count");
     expect(cartIcon).toHaveTextContent("1");
   });
 });
