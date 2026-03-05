@@ -17,7 +17,7 @@ const ProductReviews = ({ product }) => {
         </div>
       </div>
       <div className={styles.reviewArea}>
-        {reviews.map((review, i) => {
+        {reviews?.map((review, i) => {
           const date = new Date(review.date).toLocaleDateString("en-CA");
           return (
             <div className={styles.reviewCard} key={i}>
