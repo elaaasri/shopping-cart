@@ -29,34 +29,6 @@ vi.mock("/src/pages/ShopPage/ShopPage.jsx", () => ({
   default: () => <div>Shop Page Mock</div>,
 }));
 
-describe("Cart Page empty state", () => {
-  beforeEach(() => {
-    const router = createMemoryRouter(routes, {
-      initialEntries: ["/cart"],
-    });
-    render(<RouterProvider router={router} />);
-  });
-
-  it("renders headline", () => {
-    expect(
-      screen.getByRole("heading", {
-        name: /YOUR CART IS LOOKING EMPTY/i,
-      }),
-    ).toBeInTheDocument();
-  });
-
-  it("renders shop link", async () => {
-    const shopLink = screen.getByRole("link", {
-      name: /SHOP NOW/i,
-    });
-
-    await userEvent.click(shopLink);
-
-    const mockText = await screen.findByText("Shop Page Mock");
-    expect(mockText).toBeInTheDocument();
-  });
-});
-
 describe("Cart Page with Items", () => {
   beforeEach(() => {
     const router = createMemoryRouter(routes, {
@@ -73,22 +45,22 @@ describe("Cart Page with Items", () => {
     await userEvent.click(cartLink);
   };
 
-  it("renders remove button after adding the product to the cart", async () => {
+  it("renders checkout button", async () => {
     await goToCartWithItem();
 
-    expect(screen.getByText(/productTitle/i)).toBeInTheDocument();
+    const mockAlert = vi.spyOn(window, "alert").mockImplementation(() => {});
+    const checkoutBtn = screen.getByRole("button", { name: /CHECKOUT/i });
 
-    const removeBtn = screen.getByRole("button", { name: /Remove/i });
-    await userEvent.click(removeBtn);
-
-    expect(screen.getByText(/YOUR CART IS LOOKING EMPTY/i)).toBeInTheDocument();
+    await userEvent.click(checkoutBtn);
+    expect(mockAlert).toHaveBeenCalledWith("Checkout Successful!");
   });
 
-  it("check header cart count after clicking remove button", async () => {
+  it("renders keep shoping link", async () => {
     await goToCartWithItem();
 
-    const removeBtn = screen.getByRole("button", { name: /Remove/i });
-    await userEvent.click(removeBtn);
-    expect(screen.getByTestId("cart-button-count")).toHaveTextContent("0");
+    const shopLink = screen.getByRole("link", { name: /KEEP SHOPING/i });
+    await userEvent.click(shopLink);
+
+    expect(await screen.findByText(/Shop Page Mock/i)).toBeInTheDocument();
   });
 });
