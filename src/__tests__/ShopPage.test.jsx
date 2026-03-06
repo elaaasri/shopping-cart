@@ -6,11 +6,7 @@ import userEvent from "@testing-library/user-event";
 import ShopPage from "../pages/ShopPage/ShopPage";
 import CategoryPage from "../pages/CategoryPage/CategoryPage";
 
-vi.spyOn(reactRouter, "useOutletContext").mockReturnValue({
-  loading: false,
-  error: null,
-  categories: [{ catName: "beauty" }, { catName: "fragrances" }],
-});
+const mockOutlet = vi.spyOn(reactRouter, "useOutletContext");
 
 vi.mock("/src/pages/CategoryPage/CategoryPage.jsx", () => ({
   default: () => <div>Category Page Mock</div>,
@@ -18,6 +14,12 @@ vi.mock("/src/pages/CategoryPage/CategoryPage.jsx", () => ({
 
 describe("Shop Page", () => {
   beforeEach(() => {
+    mockOutlet.mockReturnValue({
+      loading: false,
+      error: null,
+      categories: [{ catName: "beauty" }, { catName: "fragrances" }],
+    });
+
     render(
       <MemoryRouter initialEntries={["/shop"]}>
         <Routes>
@@ -50,7 +52,28 @@ describe("Shop Page", () => {
   });
 });
 
-// footer git
+describe("Loading Page State", () => {
+  beforeEach(() => {
+    mockOutlet.mockReturnValue({
+      loading: true,
+      error: null,
+      categories: [],
+    });
+
+    render(
+      <MemoryRouter initialEntries={["/shop"]}>
+        <Routes>
+          <Route path="/shop" element={<ShopPage />} />
+        </Routes>
+      </MemoryRouter>,
+    );
+  });
+
+  it("renders loading page", () => {
+    expect(screen.getByText(/Loading.../i)).toBeInTheDocument();
+  });
+});
+
 // add loading and error tests
 // add search box
 // add image slider
