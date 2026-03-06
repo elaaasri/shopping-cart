@@ -50,9 +50,6 @@ describe("Shop Page", () => {
   });
 });
 
-// quantity input
-// payment section
-
 // footer git
 // add loading and error tests
 // add search box

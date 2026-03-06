@@ -18,4 +18,9 @@ describe("Footer", () => {
       screen.getByRole("heading", { name: /BE A PART OF THE ESSENTIALS/i }),
     ).toBeInTheDocument();
   });
+
+  it("renders git link", () => {
+    const gitIcon = screen.getByTestId("git-link");
+    expect(gitIcon).toHaveAttribute("href", "https://github.com/elaaasri");
+  });
 });

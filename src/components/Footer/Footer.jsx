@@ -83,7 +83,7 @@ const Footer = () => {
         &nbsp;
         <p>elaaasri</p>
         &nbsp;
-        <a href="https://github.com/elaaasri">
+        <a href="https://github.com/elaaasri" data-testid="git-link">
           <i className={`${styles.footerGitIcon} fab fa-github`}></i>
         </a>
       </div>
