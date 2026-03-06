@@ -74,7 +74,26 @@ describe("Loading Page State", () => {
   });
 });
 
-// add loading and error tests
-// add search box
-// add image slider
-// not found page
+describe("Error Page State", () => {
+  beforeEach(() => {
+    mockOutlet.mockReturnValue({
+      loading: false,
+      error: true,
+      categories: [],
+    });
+
+    render(
+      <MemoryRouter initialEntries={["/shop"]}>
+        <Routes>
+          <Route path="/shop" element={<ShopPage />} />
+        </Routes>
+      </MemoryRouter>,
+    );
+  });
+
+  it("renders error page", () => {
+    expect(
+      screen.getByText(/A Network Error was Encountered!/i),
+    ).toBeInTheDocument();
+  });
+});
