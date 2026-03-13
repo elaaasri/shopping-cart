@@ -1,6 +1,5 @@
 import { Link } from "react-router";
 import styles from "./HomePage.module.css";
-import heroImage from "/src/assets/imgs/hero-img.webp";
 
 const HomePage = () => {
   return (
@@ -13,7 +12,11 @@ const HomePage = () => {
           SHOP NOW
         </Link>
       </div>
-      <img className={styles.img} src={heroImage} data-testid="hero-image" />
+      <img
+        className={styles.img}
+        src={"/imgs/hero-img.webp"}
+        data-testid="hero-image"
+      />
     </div>
   );
 };

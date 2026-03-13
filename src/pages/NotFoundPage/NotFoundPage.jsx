@@ -1,11 +1,11 @@
 import styles from "./NotFoundPage.module.css";
 import { Link } from "react-router";
-import NotFoundImg from "/src/assets/imgs/not-found-page-icon.webp";
+// import NotFoundImg from "/src/assets/imgs/not-found-page-icon.webp";
 
 const NotFoundPage = () => {
   return (
     <div className={styles.notFoundPageContainer}>
-      <img src={NotFoundImg} />
+      <img src={"/imgs/not-found-page-icon.webp"} />
       <div>
         <span>Oops!</span>
         <span>404</span>

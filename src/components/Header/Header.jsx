@@ -1,6 +1,5 @@
 import { Link } from "react-router";
 import { useInView } from "react-intersection-observer";
-import logoIcon from "/src/assets/icons/logo-icon.webp";
 import styles from "./Header.module.css";
 
 const Header = ({ setShowSearchBox, organizedProducts }) => {
@@ -23,7 +22,11 @@ const Header = ({ setShowSearchBox, organizedProducts }) => {
       >
         <div className={styles.logoWrapper}>
           <Link to="/">
-            <img className={styles.logo} src={logoIcon} alt="header logo" />
+            <img
+              className={styles.logo}
+              src={"/icons/logo-icon.webp"}
+              alt="header logo"
+            />
           </Link>
         </div>
         <nav className={styles.nav}>
