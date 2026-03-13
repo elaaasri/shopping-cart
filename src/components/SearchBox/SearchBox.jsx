@@ -34,6 +34,7 @@ const SearchBox = ({ setShowSearchBox, products }) => {
         <i
           className={`${styles.close} fa-solid fa-x`}
           onClick={handleCloseIconClick}
+          data-testid="close-icon"
         ></i>
         <h2 className={styles.title}>SEARCH OUR ITEMS</h2>
         <input
@@ -41,6 +42,7 @@ const SearchBox = ({ setShowSearchBox, products }) => {
           onChange={(e) => handleSearchInput(e)}
           type="text"
           placeholder="search products .."
+          data-testid="search-input"
         />
         <ShowSearchProducts searchedProducts={searchedProducts} />
       </nav>
