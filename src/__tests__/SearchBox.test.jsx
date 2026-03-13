@@ -1,17 +1,9 @@
-import { render, screen, waitFor, fireEvent } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { vi, describe, it, expect, beforeEach } from "vitest";
 import userEvent from "@testing-library/user-event";
 import { createMemoryRouter, MemoryRouter, RouterProvider } from "react-router";
 import routes from "../app/routes";
 import SearchBox from "../components/SearchBox/SearchBox";
-
-vi.mock("/src/pages/ProductPage/ProductPage.jsx", () => ({
-  default: () => <div>Kiwi Product Mock</div>,
-}));
-
-// vi.mock("/src/pages/CategoryPage/CategoryPage.jsx", () => ({
-//   default: () => <div>Category Page Mock</div>,
-// }));
 
 describe("Search Box", () => {
   beforeEach(() => {
