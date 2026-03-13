@@ -4,7 +4,14 @@ import userEvent from "@testing-library/user-event";
 import { createMemoryRouter, MemoryRouter, RouterProvider } from "react-router";
 import routes from "../app/routes";
 import SearchBox from "../components/SearchBox/SearchBox";
-import { exp } from "three/tsl";
+
+vi.mock("/src/pages/ProductPage/ProductPage.jsx", () => ({
+  default: () => <div>Kiwi Product Mock</div>,
+}));
+
+// vi.mock("/src/pages/CategoryPage/CategoryPage.jsx", () => ({
+//   default: () => <div>Category Page Mock</div>,
+// }));
 
 describe("Search Box", () => {
   beforeEach(() => {
@@ -28,8 +35,15 @@ describe("Search Box", () => {
     });
   });
 
-  it("renders search result", async () => {
-    const products = [{ id: 1, title: "kiwi", price: 2.49 }];
+  it("renders search result and product path", async () => {
+    const products = [
+      {
+        title: "kiwi",
+        price: 2.49,
+        category: "groceries",
+      },
+    ];
+
     render(
       <MemoryRouter>
         <SearchBox setShowSearchBox={vi.fn()} products={products} />
@@ -40,5 +54,13 @@ describe("Search Box", () => {
     await userEvent.type(searchInput, "kiwi");
 
     expect(await screen.findByText("2.49$")).toBeInTheDocument();
+
+    const kiwiProduct = screen.getByRole("link", { name: /kiwi/i });
+    await userEvent.click(kiwiProduct);
+
+    expect(kiwiProduct).toHaveAttribute(
+      "href",
+      `/shop/${products[0].category}/kiwi`,
+    );
   });
 });
