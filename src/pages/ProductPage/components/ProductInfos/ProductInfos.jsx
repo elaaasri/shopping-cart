@@ -25,6 +25,7 @@ const ProductInfos = ({
       </div>
       <hr />
       <span className={styles.description}>{description}</span>
+      <span className={styles.stock}>STOCK : {stock}</span>
       <div className={styles.quantity}>
         <QuantityInput
           quantity={productQuantity}

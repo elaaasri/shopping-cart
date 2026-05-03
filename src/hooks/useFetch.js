@@ -16,8 +16,13 @@ const useFetch = (url) => {
         return res.json();
       })
       .then((data) => setData(data))
-      .catch((error) => setError(error))
-      .finally(() => setLoading(false));
+      .catch((error) => {
+        if (error.name === "AbortError") return;
+        setError(error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
 
     return () => controller.abort();
   }, [url]);

@@ -26,6 +26,10 @@
 .price {
   font-weight: bold;
 }
+.stock {
+  font-weight: bold;
+  font-size: 1rem;
+}
 hr {
   border: none;
   outline: none;
